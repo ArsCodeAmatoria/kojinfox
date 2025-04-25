@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ReactNode } from 'react';
 
-export const fadeIn = (direction: 'up' | 'down' | 'left' | 'right', delay: number = 0) => {
+const fadeIn = (direction: 'up' | 'down' | 'left' | 'right', delay: number = 0) => {
   return {
     hidden: {
       y: direction === 'up' ? 40 : direction === 'down' ? -40 : 0,
@@ -25,7 +25,7 @@ export const fadeIn = (direction: 'up' | 'down' | 'left' | 'right', delay: numbe
   };
 };
 
-export const stagger = (staggerChildren: number = 0.1) => {
+const stagger = (staggerChildren: number = 0.1) => {
   return {
     hidden: {},
     show: {
@@ -36,7 +36,7 @@ export const stagger = (staggerChildren: number = 0.1) => {
   };
 };
 
-export const reveal = {
+const reveal = {
   hidden: { opacity: 0, scale: 0.9 },
   show: { 
     opacity: 1, 
@@ -49,7 +49,7 @@ export const reveal = {
   }
 };
 
-export const fadeInOnScroll = {
+const fadeInOnScroll = {
   hidden: { opacity: 0, y: 30 },
   show: { 
     opacity: 1, 
@@ -62,7 +62,7 @@ export const fadeInOnScroll = {
   }
 };
 
-export const scaleIn = {
+const scaleIn = {
   hidden: { opacity: 0, scale: 0.5 },
   show: { 
     opacity: 1, 
@@ -75,7 +75,7 @@ export const scaleIn = {
   }
 };
 
-export const slideIn = (direction: 'up' | 'down' | 'left' | 'right', delay: number = 0) => {
+const slideIn = (direction: 'up' | 'down' | 'left' | 'right', delay: number = 0) => {
   return {
     hidden: {
       y: direction === 'up' ? '100%' : direction === 'down' ? '-100%' : 0,
@@ -102,7 +102,7 @@ interface MotionProps {
   delay?: number;
 }
 
-export function FadeIn({ children, className, delay = 0 }: MotionProps) {
+function FadeIn({ children, className, delay = 0 }: MotionProps) {
   return (
     <motion.div
       initial="hidden"
@@ -116,7 +116,7 @@ export function FadeIn({ children, className, delay = 0 }: MotionProps) {
   );
 }
 
-export function SlideIn({ children, className, delay = 0 }: MotionProps & { direction?: 'up' | 'down' | 'left' | 'right' }) {
+function SlideIn({ children, className, delay = 0 }: MotionProps & { direction?: 'up' | 'down' | 'left' | 'right' }) {
   return (
     <motion.div
       initial="hidden"
@@ -130,7 +130,7 @@ export function SlideIn({ children, className, delay = 0 }: MotionProps & { dire
   );
 }
 
-export function SlideUp({ children, className, delay = 0 }: MotionProps) {
+function SlideUp({ children, className, delay = 0 }: MotionProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -144,7 +144,7 @@ export function SlideUp({ children, className, delay = 0 }: MotionProps) {
   );
 }
 
-export function RevealOnScroll({ children, className }: MotionProps) {
+function RevealOnScroll({ children, className }: MotionProps) {
   return (
     <motion.div
       initial="hidden"
@@ -158,7 +158,7 @@ export function RevealOnScroll({ children, className }: MotionProps) {
   );
 }
 
-export function StaggerChildren({ children, className, staggerDelay = 0.1 }: MotionProps & { staggerDelay?: number }) {
+function StaggerChildren({ children, className, staggerDelay = 0.1 }: MotionProps & { staggerDelay?: number }) {
   return (
     <motion.div
       initial="hidden"
@@ -172,7 +172,7 @@ export function StaggerChildren({ children, className, staggerDelay = 0.1 }: Mot
   );
 }
 
-export function ScaleFadeIn({ children, className }: MotionProps) {
+function ScaleFadeIn({ children, className }: MotionProps) {
   return (
     <motion.div
       initial="hidden"
@@ -186,7 +186,7 @@ export function ScaleFadeIn({ children, className }: MotionProps) {
   );
 }
 
-export function MotionButton({ children, className }: MotionProps) {
+function MotionButton({ children, className }: MotionProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
@@ -198,4 +198,22 @@ export function MotionButton({ children, className }: MotionProps) {
   );
 }
 
-export const MotionContainer = motion.div; 
+const MotionContainer = motion.div;
+
+// Export all components
+export {
+  fadeIn,
+  stagger,
+  reveal,
+  fadeInOnScroll,
+  scaleIn,
+  slideIn,
+  FadeIn,
+  SlideIn,
+  SlideUp,
+  RevealOnScroll,
+  StaggerChildren,
+  ScaleFadeIn,
+  MotionButton,
+  MotionContainer
+}; 
