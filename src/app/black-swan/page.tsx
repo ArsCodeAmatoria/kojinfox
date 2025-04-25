@@ -217,54 +217,52 @@ export default function BlackSwan() {
             preparing for the unpredictable can be the difference between project success and disaster.
           </SlideUp>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <StaggerChildren>
-              <ScaleFadeIn className="h-full">
-                <Card className="bg-background-darker/40 border-border backdrop-blur-sm h-full">
-                  <CardContent className="p-8">
-                    <div className="mb-6 p-3 w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
-                      <Shield className="h-8 w-8 text-secondary" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4 text-text-primary">Traditional Safety Falls Short</h3>
-                    <p className="text-text-muted">
-                      Standard safety protocols are designed for known risks, not the statistically 
-                      improbable events that cause the most catastrophic failures.
-                    </p>
-                  </CardContent>
-                </Card>
-              </ScaleFadeIn>
-              
-              <ScaleFadeIn className="h-full">
-                <Card className="bg-background-darker/40 border-border backdrop-blur-sm h-full">
-                  <CardContent className="p-8">
-                    <div className="mb-6 p-3 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                      <BarChart3 className="h-8 w-8 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4 text-text-primary">Financial Protection</h3>
-                    <p className="text-text-muted">
-                      A single Black Swan event can lead to project delays, massive cost overruns, 
-                      legal liabilities, and permanent damage to company reputation.
-                    </p>
-                  </CardContent>
-                </Card>
-              </ScaleFadeIn>
-              
-              <ScaleFadeIn className="h-full">
-                <Card className="bg-background-darker/40 border-border backdrop-blur-sm h-full">
-                  <CardContent className="p-8">
-                    <div className="mb-6 p-3 w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
-                      <Wind className="h-8 w-8 text-secondary" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4 text-text-primary">Systematic Resilience</h3>
-                    <p className="text-text-muted">
-                      Creating systems that are resilient to unpredictable shocks builds 
-                      robustness into your entire operation, beyond just safety protocols.
-                    </p>
-                  </CardContent>
-                </Card>
-              </ScaleFadeIn>
-            </StaggerChildren>
-          </div>
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ScaleFadeIn className="h-full">
+              <Card className="bg-background-darker/40 border-border backdrop-blur-sm h-full">
+                <CardContent className="p-8">
+                  <div className="mb-6 p-3 w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <Shield className="h-8 w-8 text-secondary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-text-primary">Traditional Safety Falls Short</h3>
+                  <p className="text-text-muted">
+                    Standard safety protocols are designed for known risks, not the statistically 
+                    improbable events that cause the most catastrophic failures.
+                  </p>
+                </CardContent>
+              </Card>
+            </ScaleFadeIn>
+            
+            <ScaleFadeIn className="h-full">
+              <Card className="bg-background-darker/40 border-border backdrop-blur-sm h-full">
+                <CardContent className="p-8">
+                  <div className="mb-6 p-3 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <BarChart3 className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-text-primary">Financial Protection</h3>
+                  <p className="text-text-muted">
+                    A single Black Swan event can lead to project delays, massive cost overruns, 
+                    legal liabilities, and permanent damage to company reputation.
+                  </p>
+                </CardContent>
+              </Card>
+            </ScaleFadeIn>
+            
+            <ScaleFadeIn className="h-full">
+              <Card className="bg-background-darker/40 border-border backdrop-blur-sm h-full">
+                <CardContent className="p-8">
+                  <div className="mb-6 p-3 w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <Wind className="h-8 w-8 text-secondary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-text-primary">Systematic Resilience</h3>
+                  <p className="text-text-muted">
+                    Creating systems that are resilient to unpredictable shocks builds 
+                    robustness into your entire operation, beyond just safety protocols.
+                  </p>
+                </CardContent>
+              </Card>
+            </ScaleFadeIn>
+          </StaggerChildren>
         </div>
       </section>
       
@@ -281,23 +279,21 @@ export default function BlackSwan() {
             </FadeIn>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <StaggerChildren>
-              {blackSwanExamples.map((example, index) => (
-                <ScaleFadeIn key={index} className="h-full">
-                  <Card className="h-full bg-background-darker/40 border-border backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="p-3 w-12 h-12 rounded-full bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center mb-4">
-                        <example.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <h3 className="text-lg font-bold mb-2 text-text-primary">{example.title}</h3>
-                      <p className="text-text-muted">{example.description}</p>
-                    </CardContent>
-                  </Card>
-                </ScaleFadeIn>
-              ))}
-            </StaggerChildren>
-          </div>
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blackSwanExamples.map((example, index) => (
+              <ScaleFadeIn key={index} className="h-full">
+                <Card className="h-full bg-background-darker/40 border-border backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="p-3 w-12 h-12 rounded-full bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center mb-4">
+                      <example.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-2 text-text-primary">{example.title}</h3>
+                    <p className="text-text-muted">{example.description}</p>
+                  </CardContent>
+                </Card>
+              </ScaleFadeIn>
+            ))}
+          </StaggerChildren>
         </div>
       </section>
       
