@@ -9,7 +9,6 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 
 const navLinks = [
   { title: "About", href: "/about", icon: <Info className="mr-2 h-4 w-4" /> },
@@ -24,26 +23,24 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="flex items-center space-x-2">
-            <motion.div
-              whileHover={{ rotate: [-2, 2, -2, 0], transition: { duration: 0.5 } }}
-              className="font-bold text-2xl"
+            <div
+              className="font-bold text-2xl transition-transform duration-300 hover:rotate-2"
             >
               <span className="text-amber-500">Kojin</span>
               <span className="text-white">Fox</span>
-            </motion.div>
+            </div>
           </Link>
         </div>
 
         <div className="flex flex-1 items-center justify-between">
           <div className="md:hidden">
             <Link href="/" className="flex items-center space-x-2">
-              <motion.div
-                whileHover={{ rotate: [-2, 2, -2, 0], transition: { duration: 0.5 } }}
-                className="font-bold text-2xl"
+              <div
+                className="font-bold text-2xl transition-transform duration-300 hover:rotate-2"
               >
                 <span className="text-amber-500">Kojin</span>
                 <span className="text-white">Fox</span>
-              </motion.div>
+              </div>
             </Link>
           </div>
 
