@@ -88,7 +88,7 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-4xl font-bold tracking-tight md:text-6xl text-zinc-200"
           >
-            Contact <span className="text-amber-600">Us</span>
+            Contact <span className="text-amber-600">Me</span>
           </motion.h1>
           
           <motion.p 

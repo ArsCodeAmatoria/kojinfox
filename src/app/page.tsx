@@ -323,7 +323,7 @@ export default function Home() {
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <FadeIn className="flex flex-col items-center mb-16">
             <div className="inline-flex items-center px-4 py-1 mb-4 rounded-full bg-amber-600/10 border border-amber-600/20">
-              <span className="text-xs font-medium text-amber-600">WHY CHOOSE US</span>
+              <span className="text-xs font-medium text-amber-600">WHY CHOOSE ME</span>
             </div>
             <h2 className="text-4xl font-bold tracking-tight md:text-5xl text-center">
               Core <span className="text-amber-600">Expertise</span>
