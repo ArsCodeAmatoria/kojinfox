@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <Link href="/" className="flex items-center space-x-2">
               <div
-                className="font-bold text-2xl transition-transform duration-300 hover:rotate-2"
+                className="font-bold text-2xl transition-all duration-200 hover:rotate-6 hover:scale-110"
               >
                 <span className="text-amber-500">Kojin</span>
                 <span className="text-white">Fox</span>
