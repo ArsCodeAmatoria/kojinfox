@@ -292,67 +292,258 @@ export default function About() {
               <span className="text-xs font-medium text-amber-600">TECHNICAL PROFICIENCY</span>
             </div>
             <h2 className="text-4xl font-bold">Digital <span className="text-amber-600">Skills</span></h2>
+            <p className="mt-4 text-zinc-400 max-w-2xl mx-auto">
+              Combining construction safety expertise with technical capabilities
+              for modern solutions to complex challenges
+            </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Skills Categories */}
+          <div className="grid grid-cols-1 gap-14">
             {/* Office & Productivity */}
             <RevealOnScroll>
-              <Card className="border-zinc-800 bg-black/40 backdrop-blur-sm h-full">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-semibold mb-6 text-zinc-200">Office & Productivity</h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    {["PowerPoint", "Word", "Excel", "Office Suite", "Google Workspace", "Project Management"].map((skill, i) => (
-                      <motion.div 
-                        key={skill}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-zinc-200 border-b border-amber-600/30 pb-2 mb-8 inline-block">
+                  Office & Productivity
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    name: "PowerPoint",
+                    description: "Creating engaging training presentations and safety briefings with detailed visuals",
+                    level: 90
+                  },
+                  {
+                    name: "Word",
+                    description: "Developing comprehensive documentation, safety manuals and training protocols",
+                    level: 95
+                  },
+                  {
+                    name: "Excel",
+                    description: "Building safety data tracking systems and analytical tools for incident reporting",
+                    level: 85
+                  },
+                  {
+                    name: "Office Suite",
+                    description: "Integrated approach using multiple tools for complete project documentation",
+                    level: 90
+                  },
+                  {
+                    name: "Google Workspace",
+                    description: "Collaborative safety planning and real-time document sharing with teams",
+                    level: 80
+                  },
+                  {
+                    name: "Project Management",
+                    description: "Coordinating multi-faceted safety implementation projects with various stakeholders",
+                    level: 85
+                  }
+                ].map((skill, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index }}
+                    className="bg-black/30 border border-zinc-800 rounded-lg p-6 hover:border-amber-600/30 transition-all duration-300"
+                  >
+                    <h4 className="text-lg font-medium text-zinc-200 mb-2">{skill.name}</h4>
+                    <p className="text-sm text-zinc-400 mb-4">{skill.description}</p>
+                    <div className="w-full bg-zinc-800/50 h-2 rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.1 * i }}
-                        className="flex items-center gap-2"
-                      >
-                        <div className="h-2 w-2 rounded-full bg-amber-600"></div>
-                        <span className="text-zinc-300">{skill}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                        transition={{ duration: 1, delay: 0.2 + (0.1 * index) }}
+                        className="h-full bg-gradient-to-r from-amber-600 to-amber-500 rounded-full"
+                      ></motion.div>
+                    </div>
+                    <div className="mt-2 text-right">
+                      <span className="text-xs text-amber-600">{skill.level}%</span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </RevealOnScroll>
 
             {/* Programming & Development */}
             <RevealOnScroll>
-              <Card className="border-zinc-800 bg-black/40 backdrop-blur-sm h-full">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-semibold mb-6 text-zinc-200">Development & Blockchain</h3>
-                  <div className="grid grid-cols-2 gap-4">
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-zinc-200 border-b border-amber-600/30 pb-2 mb-8 inline-block">
+                  Development & Blockchain
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-black/30 border border-zinc-800 rounded-lg p-6"
+                >
+                  <h4 className="text-lg font-semibold text-zinc-200 mb-4">Programming Languages</h4>
+                  <div className="space-y-5">
                     {[
-                      "Rust", 
-                      "Haskell", 
-                      "TypeScript", 
-                      "React", 
-                      "Next.js", 
-                      "Expo", 
-                      "React Native", 
-                      "Blockchain", 
-                      "Polkadot", 
-                      "Substrate", 
-                      "ZKID / Substrate", 
-                      "DID",
-                      "SBT (Soul Bound Tokens)"
+                      {
+                        name: "Rust",
+                        description: "Systems programming with emphasis on safety and performance",
+                        proficiency: "Advanced",
+                        color: "bg-amber-600"
+                      },
+                      {
+                        name: "Haskell",
+                        description: "Functional programming for robust, maintainable applications",
+                        proficiency: "Intermediate",
+                        color: "bg-amber-500"
+                      },
+                      {
+                        name: "TypeScript",
+                        description: "Strongly-typed JavaScript for safer web development",
+                        proficiency: "Advanced",
+                        color: "bg-amber-600"
+                      }
                     ].map((skill, i) => (
+                      <div key={i} className="relative">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="font-medium text-zinc-300">{skill.name}</span>
+                          <span className="text-xs text-zinc-400">{skill.proficiency}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <div className={`h-1 w-1 rounded-full ${skill.color} mr-2`}></div>
+                          <p className="text-sm text-zinc-400">{skill.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-black/30 border border-zinc-800 rounded-lg p-6"
+                >
+                  <h4 className="text-lg font-semibold text-zinc-200 mb-4">Web & Mobile Frameworks</h4>
+                  <div className="space-y-5">
+                    {[
+                      {
+                        name: "React",
+                        description: "Building interactive UIs for safety training applications",
+                        proficiency: "Advanced",
+                        color: "bg-amber-600"
+                      },
+                      {
+                        name: "Next.js",
+                        description: "Server-side rendering for performant web applications",
+                        proficiency: "Advanced",
+                        color: "bg-amber-600"
+                      },
+                      {
+                        name: "React Native & Expo",
+                        description: "Cross-platform mobile apps for field safety operations",
+                        proficiency: "Intermediate",
+                        color: "bg-amber-500"
+                      }
+                    ].map((skill, i) => (
+                      <div key={i} className="relative">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="font-medium text-zinc-300">{skill.name}</span>
+                          <span className="text-xs text-zinc-400">{skill.proficiency}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <div className={`h-1 w-1 rounded-full ${skill.color} mr-2`}></div>
+                          <p className="text-sm text-zinc-400">{skill.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="bg-black/30 border border-zinc-800 rounded-lg p-6 lg:col-span-2"
+                >
+                  <h4 className="text-lg font-semibold text-zinc-200 mb-4">Blockchain & Decentralized Technologies</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {[
+                      {
+                        name: "Blockchain",
+                        description: "Immutable record-keeping for safety certification verification",
+                        icon: "🔗"
+                      },
+                      {
+                        name: "Polkadot",
+                        description: "Multi-chain network for connected safety compliance systems",
+                        icon: "⚪"
+                      },
+                      {
+                        name: "Substrate",
+                        description: "Blockchain framework for custom safety verification networks",
+                        icon: "⬛"
+                      },
+                      {
+                        name: "ZKID / DID",
+                        description: "Zero-knowledge and decentralized identity solutions for private credential verification",
+                        icon: "🔐"
+                      },
+                      {
+                        name: "SBT",
+                        description: "Soul Bound Tokens for permanent safety certification records",
+                        icon: "🏆"
+                      }
+                    ].map((tech, i) => (
                       <motion.div 
-                        key={skill}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        key={i}
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 * i }}
-                        className="flex items-center gap-2"
+                        className="flex flex-col items-center text-center p-4 rounded-lg border border-zinc-800/50 hover:border-amber-600/30 transition-all duration-300"
                       >
-                        <div className="h-2 w-2 rounded-full bg-amber-600"></div>
-                        <span className="text-zinc-300">{skill}</span>
+                        <div className="text-2xl mb-3">{tech.icon}</div>
+                        <h5 className="font-medium text-zinc-300 mb-2">{tech.name}</h5>
+                        <p className="text-xs text-zinc-400">{tech.description}</p>
                       </motion.div>
                     ))}
                   </div>
+                </motion.div>
+              </div>
+            </RevealOnScroll>
+
+            {/* Skill Applications */}
+            <RevealOnScroll>
+              <Card className="border-amber-600/20 bg-black/40 backdrop-blur-sm mt-8">
+                <CardContent className="p-8">
+                  <h3 className="text-xl font-semibold mb-4 text-amber-500">Applications of Technical Skills</h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Digital safety certification tracking system development",
+                      "Custom training material creation with interactive elements",
+                      "Blockchain-based verification of training credentials and certifications",
+                      "Mobile applications for on-site safety protocol access",
+                      "Data analysis of safety incidents for prevention strategies",
+                      "Decentralized identity solutions for secure credential management"
+                    ].map((application, i) => (
+                      <motion.li 
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 * i }}
+                        className="flex items-start gap-3"
+                      >
+                        <div className="h-5 w-5 rounded-full bg-amber-600/10 border border-amber-600/40 flex-shrink-0 flex items-center justify-center mt-0.5">
+                          <div className="h-1.5 w-1.5 rounded-full bg-amber-600"></div>
+                        </div>
+                        <span className="text-zinc-300">{application}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             </RevealOnScroll>
