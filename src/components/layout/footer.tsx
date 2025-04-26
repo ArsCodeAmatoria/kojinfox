@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { motion } from "framer-motion";
 
 export function Footer() {
   return (
@@ -9,10 +10,16 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-primary">Kojin Fox</span>
+              <motion.div
+                whileHover={{ rotate: [-2, 2, -2, 0], transition: { duration: 0.5 } }}
+                className="font-bold text-2xl"
+              >
+                <span className="text-amber-500">Kojin</span>
+                <span className="text-white">Fox</span>
+              </motion.div>
             </Link>
             <p className="mt-4 text-sm">
-              Tower Construction Safety Specialist & Incident Prevention Expert
+              Highrise Safety Specialist & Incident Prevention Expert
             </p>
           </div>
           
