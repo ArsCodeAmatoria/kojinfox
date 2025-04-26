@@ -232,7 +232,7 @@ export default function Contact() {
                     </label>
                     <Textarea
                       id="message"
-                      placeholder="Tell us about your project and safety needs..."
+                      placeholder="Tell me about your project and safety needs..."
                       rows={5}
                       required
                       className="bg-black/40 border-zinc-800 focus:border-amber-600/50 text-zinc-300"
@@ -363,7 +363,7 @@ export default function Contact() {
               <MotionButton>
                 <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700 text-black font-medium px-8 py-7 text-lg">
                   <Link href="/services" className="inline-flex items-center">
-                    View Our Services
+                    View My Services
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>

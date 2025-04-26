@@ -34,17 +34,17 @@ const skills = [
 
 const testimonials = [
   {
-    quote: "Kojin's expertise was instrumental in overhauling our safety protocols. His insights helped us prevent potential incidents during our most complex tower project.",
+    quote: "Kojin's expertise was instrumental in overhauling my company's safety protocols. His insights helped us prevent potential incidents during our most complex tower project.",
     name: "Sarah Johnson",
     company: "Skyline Developers Inc.",
   },
   {
-    quote: "Hiring Kojin was one of the best decisions we made. His approach to identifying overlooked risks completely changed how we think about construction safety.",
+    quote: "Hiring Kojin was one of the best decisions I made. His approach to identifying overlooked risks completely changed how I think about construction safety.",
     name: "Michael Chen",
     company: "Vertical Structures Ltd.",
   },
   {
-    quote: "As a senior safety manager, I was impressed by Kojin's practical knowledge and his ability to train our team effectively. He bridges the gap between theory and application.",
+    quote: "As a senior safety manager, I was impressed by Kojin's practical knowledge and his ability to train my team effectively. He bridges the gap between theory and application.",
     name: "Elena Rodriguez",
     company: "Summit Construction Group",
   },
@@ -457,7 +457,7 @@ export default function Home() {
             </h2>
             <p className="mt-4 text-zinc-400 max-w-2xl text-center">
               Feedback from construction professionals who've experienced 
-              our innovative safety systems in action
+              my innovative safety systems in action
             </p>
           </FadeIn>
 
@@ -516,7 +516,7 @@ export default function Home() {
             </SlideIn>
             
             <FadeIn delay={0.3} className="text-xl text-zinc-400 mb-10 max-w-3xl mx-auto">
-              Let's discuss how our expertise can protect your personnel, 
+              Let's discuss how my expertise can protect your personnel, 
               reduce risks, and improve your project outcomes
             </FadeIn>
             
@@ -524,7 +524,7 @@ export default function Home() {
               <MotionButton>
                 <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700 text-black font-medium px-8 py-7 text-lg">
                   <Link href="/contact" className="inline-flex items-center">
-                    Contact Us Today
+                    Contact Me Today
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
