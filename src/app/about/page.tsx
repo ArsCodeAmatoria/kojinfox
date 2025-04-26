@@ -1,6 +1,6 @@
 'use client';
 
-import { Medal, Award, GraduationCap, Calendar, CheckCircle, Link2, Globe, Database, Lock, Award as AwardIcon, Code, FileCode, Shield, Network, Cpu } from "lucide-react";
+import { Medal, Award, GraduationCap, Calendar, CheckCircle, Link2, Globe, Database, Lock, Award as AwardIcon, Code, FileCode, Shield, Network, Cpu, Terminal } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -521,6 +521,58 @@ export default function About() {
                         <h5 className="font-medium text-zinc-300 mb-2">{tech.name}</h5>
                         <p className="text-xs text-zinc-400">{tech.description}</p>
                       </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </RevealOnScroll>
+
+            {/* Cybersecurity & Penetration Testing */}
+            <RevealOnScroll>
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-zinc-200 border-b border-amber-600/30 pb-2 mb-8 inline-block">
+                  Cybersecurity & Penetration Testing
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 gap-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-black/30 border border-zinc-800 rounded-lg p-6"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="mr-4 p-3 rounded-full bg-amber-600/10 border border-amber-600/20">
+                      <Terminal className="h-6 w-6 text-amber-600" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-zinc-200">Penetration Testing with Kali Linux</h4>
+                  </div>
+                  <p className="text-sm text-zinc-400 mb-6">
+                    Expertise in conducting security audits and vulnerability assessments using the industry-standard Kali Linux security platform. Implementing network security measures to protect construction site communications and IoT devices.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {[
+                      {
+                        title: "Tools & Techniques",
+                        items: ["Network scanning & enumeration", "Vulnerability detection", "Social engineering tactics", "Wireless network security"]
+                      },
+                      {
+                        title: "Safety Applications",
+                        items: ["Construction site network hardening", "IoT device security", "Credential protection", "Security awareness training"]
+                      }
+                    ].map((group, idx) => (
+                      <div key={idx} className="space-y-3">
+                        <h5 className="text-sm font-medium text-amber-500">{group.title}</h5>
+                        <ul className="space-y-2">
+                          {group.items.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <div className="h-1.5 w-1.5 rounded-full bg-amber-600 mt-1.5 flex-shrink-0"></div>
+                              <span className="text-xs text-zinc-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
                   </div>
                 </motion.div>
