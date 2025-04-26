@@ -64,7 +64,7 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-4 text-xl text-zinc-400 max-w-2xl"
           >
-            Tower Construction Safety Specialist with 15+ years experience in high-rise safety systems
+            Safety Instructor at Bigfoot Crane Company with extensive experience in construction safety
           </motion.p>
         </div>
       </section>
@@ -103,25 +103,24 @@ export default function About() {
               <FadeIn delay={0.2}>
                 <h2 className="text-3xl font-bold mb-6">Professional <span className="text-amber-600">Profile</span></h2>
                 <p className="text-zinc-400 mb-4">
-                  With over 15 years of specialized experience in high-rise construction safety, 
-                  I've dedicated my career to reimagining tower safety protocols and practices. 
-                  My expertise lies in identifying the often-overlooked "Black Swan" risks that 
-                  can lead to catastrophic failures in tower construction.
+                  As a Crane, Rigging & Safety Training Instructor at Bigfoot Crane Company Inc., 
+                  I specialize in comprehensive safety training including Fall Protection, WHMIS, 
+                  Civil Rigging, Overhead Crane, Hoist, and Lockout/Tagout procedures.
                 </p>
                 <p className="text-zinc-400 mb-8">
-                  Having worked on projects across North America, Europe, and Asia, I bring a 
-                  global perspective to local safety challenges. My approach combines rigorous 
-                  technical knowledge with practical on-site implementation strategies.
+                  With extensive experience as both a Carpenter and Construction Safety Officer (CSO) 
+                  on major projects across the Lower Mainland, including Vancouver House, Olympic Village, 
+                  and Oakridge Mall, I bring practical expertise to every safety solution I provide.
                 </p>
               </FadeIn>
               
               <StaggerChildren staggerDelay={0.1} className="flex flex-wrap gap-3">
                 {[
-                  "Safety Assessment",
-                  "Risk Mitigation",
-                  "Emergency Response",
-                  "Regulatory Compliance",
-                  "Safety Training"
+                  "Fall Protection",
+                  "Rigging Training",
+                  "Crane Safety",
+                  "Hoist Safety",
+                  "WHMIS"
                 ].map((skill, index) => (
                   <motion.div
                     key={index}
@@ -162,23 +161,28 @@ export default function About() {
           <div className="space-y-14">
             {[
               {
-                period: "2018 - Present",
-                title: "Independent Safety Consultant",
-                description: "Providing specialized consulting services to major construction firms across North America and Europe, with a focus on high-rise projects exceeding 50 stories.",
+                period: "2024 - Present",
+                title: "Crane, Rigging & Safety Training Instructor, Bigfoot Crane Company Inc.",
+                description: "Providing comprehensive safety training including Fall Protection, WHMIS, Civil Rigging, Overhead Crane, Hoist, and Lockout/Tagout procedures. Certified Ives Training Instructor.",
                 badges: [
-                  { text: "100+ Projects", color: "bg-emerald-500 text-black" },
-                  { text: "25+ Countries", color: "bg-emerald-500 text-black" }
+                  { text: "Safety Training", color: "bg-emerald-500 text-black" },
+                  { text: "Certification", color: "bg-emerald-500 text-black" }
                 ]
               },
               {
-                period: "2012 - 2018",
-                title: "Lead Safety Engineer, SkyHigh Construction",
-                description: "Led a team of 15 safety specialists, developing and implementing safety protocols for projects valued at over $500 million. Reduced incident rates by 47% over 5 years."
+                period: "2021 - Present",
+                title: "Carpenter / CSO, EMBERS",
+                description: "Working as a Carpenter and Construction Safety Officer on numerous projects throughout the Lower Mainland, including Vancouver House, Olympic Village, and Oakridge Mall. Collaborating with Prime Contractors to ensure site safety."
               },
               {
-                period: "2007 - 2012",
-                title: "Safety Compliance Officer, BuildSafe Inc.",
-                description: "Managed regulatory compliance across multiple sites. Developed new risk assessment methodologies that became industry standards in three states."
+                period: "2022 - 2023",
+                title: "Safety Officer, Marcon",
+                description: "Focused on workplace safety compliance and implementation of safety protocols across construction sites."
+              },
+              {
+                period: "2018 - 2019",
+                title: "Safety Officer, Whitewater Concrete Ltd",
+                description: "Safety Coordinator on the Vancouver House Project. Responsible for Safe Work Procedures, Inventory, Tool Box talks, Guardrails, Flagging, and material movement coordination."
               }
             ].map((job, index) => (
               <div key={index} className="relative pl-8 pb-4 border-l border-zinc-800 sm:pl-12 md:pl-16">
@@ -225,32 +229,32 @@ export default function About() {
             {[
               {
                 icon: <Medal className="h-6 w-6 text-amber-600" />,
-                title: "High-Rise Safety Systems",
-                description: "Specialized protocols for buildings exceeding 50 stories, with emphasis on wind dynamics, structural integrity, and emergency evacuation systems.",
+                title: "Crane & Hoist Safety",
+                description: "Specialized training and certification in operational safety for tower cranes, hoists, and construction elevators.",
                 list: [
-                  "Vertical transportation safety",
-                  "Fall protection systems", 
-                  "High-altitude working conditions"
+                  "Overhead crane training",
+                  "Construction use elevator operation", 
+                  "Telehandler operations"
                 ]
               },
               {
                 icon: <Award className="h-6 w-6 text-amber-600" />,
-                title: "Risk Assessment Frameworks",
-                description: "Development of comprehensive risk models that account for complex interrelated factors in large-scale construction projects.",
+                title: "Rigging & Fall Protection",
+                description: "Comprehensive expertise in rigging operations and fall protection systems for high-rise construction.",
                 list: [
-                  "Predictive risk modeling",
-                  "Failure mode analysis", 
-                  "Scenario-based planning"
+                  "Level 1 & 2 Rigging Certification",
+                  "Fall protection implementation", 
+                  "Safety harness inspection"
                 ]
               },
               {
                 icon: <GraduationCap className="h-6 w-6 text-amber-600" />,
                 title: "Safety Training & Education",
-                description: "Creating effective training programs that bridge theoretical knowledge with practical application for construction teams of all sizes.",
+                description: "IVES Certified Trainer providing hands-on training and certification for construction equipment and safety procedures.",
                 list: [
-                  "Immersive simulation training",
-                  "Certification programs", 
-                  "Multilingual safety protocols"
+                  "Mobile Elevating Work Platforms",
+                  "Forklift and Telehandler operation", 
+                  "WHMIS and Lockout/Tagout protocols"
                 ]
               }
             ].map((expertise, index) => (

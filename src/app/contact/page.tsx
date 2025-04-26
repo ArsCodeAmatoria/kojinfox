@@ -97,8 +97,7 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-4 text-xl text-zinc-400 max-w-2xl"
           >
-            Get in touch with our tower safety specialists and discover how we can enhance 
-            your project's safety standards
+            Get in touch to discover how I can enhance your project's safety standards with specialized training
           </motion.p>
         </div>
       </section>
@@ -110,8 +109,8 @@ export default function Contact() {
             <FadeIn>
               <h2 className="text-3xl font-bold mb-6">Get in <span className="text-amber-600">Touch</span></h2>
               <p className="text-zinc-400 mb-6">
-                Have questions about our services or want to schedule a consultation? 
-                Fill out the form and our team will get back to you within 24 hours.
+                Have questions about my services or want to schedule a training session? 
+                Fill out the form and I'll get back to you within 24 hours.
               </p>
               
               {isSubmitted ? (
@@ -133,7 +132,7 @@ export default function Contact() {
                       </div>
                       <h3 className="text-xl font-semibold text-emerald-500 text-center mb-2">Message Sent!</h3>
                       <p className="text-zinc-400 text-center mb-6">
-                        Thank you for reaching out. We'll get back to you as soon as possible.
+                        Thank you for reaching out. I'll get back to you as soon as possible.
                       </p>
                       <div className="flex justify-center">
                         <MotionButton>
@@ -212,11 +211,12 @@ export default function Contact() {
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent className="bg-zinc-900 border-zinc-800">
-                        <SelectItem value="audit">Site Safety Audit</SelectItem>
-                        <SelectItem value="crane">Tower Crane & Hoist Planning</SelectItem>
-                        <SelectItem value="blackswan">Black Swan Risk Assessment</SelectItem>
-                        <SelectItem value="emergency">Emergency Response Planning</SelectItem>
-                        <SelectItem value="training">Custom Safety Training</SelectItem>
+                        <SelectItem value="fall">Fall Protection Training</SelectItem>
+                        <SelectItem value="crane">Crane & Hoist Training</SelectItem>
+                        <SelectItem value="rigging">Rigging Training</SelectItem>
+                        <SelectItem value="whmis">WHMIS Training</SelectItem>
+                        <SelectItem value="equipment">Equipment Operation Training</SelectItem>
+                        <SelectItem value="lockout">Lockout/Tagout Training</SelectItem>
                         <SelectItem value="other">Other Services</SelectItem>
                       </SelectContent>
                     </Select>
@@ -284,70 +284,41 @@ export default function Contact() {
             </FadeIn>
             
             <div>
-              <RevealOnScroll>
-                <h2 className="text-3xl font-bold mb-6">Contact <span className="text-amber-600">Information</span></h2>
-              </RevealOnScroll>
-              <StaggerChildren className="space-y-6 mb-8">
-                <ScaleFadeIn>
-                  <Card className="bg-black/40 border-zinc-800 backdrop-blur-sm">
-                    <CardContent className="p-6">
-                      <div className="flex items-start">
-                        <div className="mr-4 p-2 rounded-full bg-amber-600/10">
-                          <Phone className="h-5 w-5 text-amber-600" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-zinc-200">Phone</h3>
-                          <p className="mt-1 text-zinc-300">(123) 456-7890</p>
-                          <p className="text-sm text-zinc-400">
-                            Monday-Friday, 8:00 AM - 5:00 PM
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </ScaleFadeIn>
+              <h2 className="text-3xl font-bold mb-6">Contact <span className="text-amber-600">Information</span></h2>
+              <div className="space-y-6">
+                <RevealOnScroll className="flex items-start">
+                  <div className="rounded-full p-3 mr-4 bg-amber-600/10 border border-amber-600/20 flex-shrink-0">
+                    <Phone className="h-5 w-5 text-amber-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-zinc-200 mb-1">Phone</h3>
+                    <p className="text-zinc-400">236 868 1732</p>
+                    <p className="text-sm text-zinc-500 mt-1">Available Monday-Friday, 9am-5pm PST</p>
+                  </div>
+                </RevealOnScroll>
                 
-                <ScaleFadeIn>
-                  <Card className="bg-black/40 border-zinc-800 backdrop-blur-sm">
-                    <CardContent className="p-6">
-                      <div className="flex items-start">
-                        <div className="mr-4 p-2 rounded-full bg-amber-600/10">
-                          <Mail className="h-5 w-5 text-amber-600" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-zinc-200">Email</h3>
-                          <p className="mt-1 text-zinc-300">contact@kojinfox.com</p>
-                          <p className="text-sm text-zinc-400">
-                            We typically respond within 24 hours
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </ScaleFadeIn>
+                <RevealOnScroll className="flex items-start">
+                  <div className="rounded-full p-3 mr-4 bg-amber-600/10 border border-amber-600/20 flex-shrink-0">
+                    <Mail className="h-5 w-5 text-amber-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-zinc-200 mb-1">Email</h3>
+                    <p className="text-zinc-400">kojinfox@gmail.com</p>
+                    <p className="text-sm text-zinc-500 mt-1">I typically respond within 24 hours</p>
+                  </div>
+                </RevealOnScroll>
                 
-                <ScaleFadeIn>
-                  <Card className="bg-black/40 border-zinc-800 backdrop-blur-sm">
-                    <CardContent className="p-6">
-                      <div className="flex items-start">
-                        <div className="mr-4 p-2 rounded-full bg-amber-600/10">
-                          <MapPin className="h-5 w-5 text-amber-600" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-zinc-200">Office</h3>
-                          <p className="mt-1 text-zinc-300">
-                            1234 Tower Ave, Suite 500<br />
-                            Metropolis, NY 10001
-                          </p>
-                          <p className="text-sm text-zinc-400">
-                            By appointment only
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </ScaleFadeIn>
-              </StaggerChildren>
+                <RevealOnScroll className="flex items-start">
+                  <div className="rounded-full p-3 mr-4 bg-amber-600/10 border border-amber-600/20 flex-shrink-0">
+                    <MapPin className="h-5 w-5 text-amber-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-zinc-200 mb-1">Location</h3>
+                    <p className="text-zinc-400">13750 100 Ave #2907</p>
+                    <p className="text-zinc-400">Surrey, BC V3T 0L3</p>
+                  </div>
+                </RevealOnScroll>
+              </div>
               
               {/* Google Map placeholder */}
               <motion.div 
@@ -380,11 +351,11 @@ export default function Contact() {
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <div className="text-center">
             <SlideIn className="text-3xl font-bold md:text-4xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600">
-              Ready to elevate your tower safety standards?
+              Ready to elevate your safety standards?
             </SlideIn>
             
             <FadeIn delay={0.3} className="text-xl text-zinc-400 mb-10 max-w-3xl mx-auto">
-              Let our expertise protect your personnel, reduce risks, 
+              Let my expertise protect your personnel, reduce risks, 
               and improve your project outcomes
             </FadeIn>
             

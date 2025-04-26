@@ -18,74 +18,75 @@ interface ServiceType {
 
 const services: ServiceType[] = [
   {
-    title: "Site Safety Audits",
-    description: "Comprehensive inspections to identify and mitigate potential hazards before they become incidents.",
+    title: "Fall Protection Training",
+    description: "Comprehensive training on fall prevention, proper harness use, and safety procedures for working at heights.",
     details: [
-      "Multi-point inspection of all critical safety systems",
-      "Detailed documentation of compliance gaps",
-      "Prioritized remediation recommendations",
-      "Follow-up verification of corrections",
+      "Fall protection system assessment",
+      "Proper harness fitting and inspection",
+      "Anchor point selection and verification",
+      "Rescue procedures training",
+      "CORE of Fall Protection certification"
     ],
     icon: <FileCheck className="h-5 w-5" />,
   },
   {
-    title: "Tower Crane & Hoist Plans",
-    description: "Expert planning and safety protocols for critical vertical transportation systems.",
+    title: "Crane & Hoist Training",
+    description: "Expert training for overhead crane operation, hoist safety, and vertical transport systems.",
     details: [
-      "Crane positioning and load path analysis",
-      "Hoistway safety assessment",
-      "Operator and ground crew training",
-      "Maintenance schedule optimization",
-      "Weather contingency planning",
+      "Overhead Crane operation certification",
+      "Personal Hoist & Construction Elevator operation",
+      "Load calculation and rigging selection",
+      "Signal person training",
+      "Self Erect Crane operation (Full Scope)"
     ],
     icon: <HardHat className="h-5 w-5" />,
   },
   {
-    title: "Black Swan Risk Audits",
-    description: "Specialized assessment to identify rare but catastrophic failure points in high-rise construction.",
+    title: "Rigging Training",
+    description: "Specialized training in rigging fundamentals, load security, and safe lifting operations.",
     details: [
-      "Beyond-compliance risk assessment",
-      "Identification of potential cascading failure scenarios",
-      "System interdependency mapping",
-      "Low-probability, high-impact event preparation",
-      "Emergency response simulation",
+      "Basic and advanced rigging techniques",
+      "Level 1 & 2 Rigging certification",
+      "Civil rigging applications",
+      "Wire rope and synthetic sling inspection",
+      "Lift planning and execution"
     ],
     icon: <AlertTriangle className="h-5 w-5" />,
     highlight: true,
   },
   {
-    title: "Emergency Response Plans",
-    description: "Tailored protocols and training for rapid, effective response to construction emergencies.",
+    title: "WHMIS Training",
+    description: "Workplace Hazardous Materials Information System training for proper handling of hazardous materials.",
     details: [
-      "Custom emergency procedure development",
-      "Evacuation route planning and signage",
-      "First responder coordination",
-      "Regular drill organization and evaluation",
-      "Emergency equipment inspection",
+      "Hazard identification and classification",
+      "Safety Data Sheet (SDS) interpretation",
+      "Proper labeling requirements",
+      "Hazardous material storage protocols",
+      "Emergency response procedures"
     ],
     icon: <ShieldCheck className="h-5 w-5" />,
   },
   {
-    title: "Custom On-Site Safety Training",
-    description: "Specialized training programs designed for your specific project and team needs.",
+    title: "Equipment Operation Training",
+    description: "Certified training for various construction equipment including forklifts and telehandlers.",
     details: [
-      "Role-specific safety modules",
-      "Hands-on equipment operation training",
-      "Multi-lingual instruction available",
-      "Behavior-based safety principles",
-      "Certification programs for key personnel",
+      "Standard Forklift (Class 4-5) certification",
+      "Telehandler (Class 7) operation",
+      "Mobile Elevating Work Platform training",
+      "Skidsteer and Wheel Loader operation",
+      "Back-Hoe Loader certification"
     ],
     icon: <BookOpen className="h-5 w-5" />,
   },
   {
-    title: "Fall Protection Systems",
-    description: "Comprehensive fall prevention and protection planning for tower construction.",
+    title: "Lockout/Tagout Training",
+    description: "Comprehensive training on energy control procedures to prevent accidental equipment startup.",
     details: [
-      "Guardrail, safety net, and personal fall arrest planning",
-      "Anchor point verification",
-      "Leading edge work protocols",
-      "Rescue equipment and procedures",
-      "CSA Z259 compliance verification",
+      "Hazardous energy source identification",
+      "Proper lockout device application",
+      "Equipment-specific procedures",
+      "Group lockout coordination",
+      "Verification and testing protocols"
     ],
     icon: <Hammer className="h-5 w-5" />,
   },
@@ -130,7 +131,7 @@ export default function Services() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center px-3 py-1 mb-6 rounded-full bg-primary/10 border border-primary/20"
           >
-            <span className="text-xs font-medium text-primary">OUR OFFERINGS</span>
+            <span className="text-xs font-medium text-primary">MY OFFERINGS</span>
           </motion.div>
           
           <motion.h1 
@@ -139,7 +140,7 @@ export default function Services() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-4xl font-bold tracking-tight md:text-6xl text-text-primary"
           >
-            Our <span className="text-primary">Services</span>
+            My <span className="text-primary">Services</span>
           </motion.h1>
           
           <motion.p 
@@ -148,8 +149,7 @@ export default function Services() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-4 text-xl text-text-muted max-w-2xl"
           >
-            Comprehensive safety solutions for tower construction projects, designed 
-            to protect your team and maximize operational efficiency
+            IVES Certified Trainer offering comprehensive safety training solutions for construction and industrial operations
           </motion.p>
         </div>
       </section>
@@ -210,12 +210,12 @@ export default function Services() {
               </div>
               <h2 className="text-3xl font-bold text-text-primary mb-6">Custom Safety Solutions</h2>
               <p className="text-text-muted mb-4">
-                Don't see what you need? We specialize in creating custom safety programs 
+                Don't see what you need? I specialize in creating custom safety programs 
                 tailored to your specific project requirements and challenges.
               </p>
               <p className="text-text-muted mb-8">
-                Our approach begins with a thorough assessment of your construction site, 
-                project plans, and team capabilities. We then develop targeted solutions 
+                My approach begins with a thorough assessment of your construction site, 
+                project plans, and team capabilities. I then develop targeted solutions 
                 that address your unique safety concerns while optimizing operational efficiency.
               </p>
               <div>
@@ -255,9 +255,9 @@ export default function Services() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <FadeIn className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-1 mb-4 rounded-full bg-secondary/10 border border-secondary/20">
-              <span className="text-xs font-medium text-secondary">HOW WE WORK</span>
+              <span className="text-xs font-medium text-secondary">HOW I WORK</span>
             </div>
-            <h2 className="text-4xl font-bold text-text-primary">Our <span className="text-secondary">Process</span></h2>
+            <h2 className="text-4xl font-bold text-text-primary">My <span className="text-secondary">Process</span></h2>
           </FadeIn>
           
           <StaggerChildren staggerDelay={0.15} className="grid grid-cols-1 gap-8 md:grid-cols-4">
@@ -323,7 +323,7 @@ export default function Services() {
                 transition={{ duration: 0.7 }}
                 className="text-3xl font-bold tracking-tight text-secondary md:text-4xl"
               >
-                Ready to elevate your tower safety standards?
+                Ready to elevate your safety standards?
               </motion.h2>
               
               <motion.p 
@@ -333,7 +333,7 @@ export default function Services() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="mt-4 text-text-primary mb-10"
               >
-                Contact us today to discuss how our services can benefit your next project.
+                Contact me today to discuss how my services can benefit your next project.
               </motion.p>
             </FadeIn>
             

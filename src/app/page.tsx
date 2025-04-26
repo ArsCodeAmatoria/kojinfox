@@ -54,63 +54,31 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-black py-24 md:py-32 overflow-hidden">
+      <section className="relative bg-black overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 z-0">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.1 }}
-            transition={{ duration: 1.5 }}
-            className="absolute top-0 right-0 w-1/3 h-1/3 bg-amber-600/10 blur-3xl rounded-full"
-          ></motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.05 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-            className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-emerald-500/5 blur-3xl rounded-full"
-          ></motion.div>
-          <motion.div
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.3 }}
-            className="absolute top-1/4 left-1/4 w-64 h-64 border border-amber-600/20 rounded-full"
-          ></motion.div>
-          <motion.div
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.4 }}
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 border border-emerald-500/10 rounded-full"
-          ></motion.div>
-          <div className="grid grid-cols-6 absolute inset-0 opacity-5">
-            {Array.from({ length: 20 }).map((_, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: i * 0.02 }}
-                className="border-r border-t border-amber-600/10"
-              ></motion.div>
-            ))}
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/80"></div>
+          <div className="absolute inset-0 bg-[url('/hero-image.png')] bg-contain bg-center opacity-20"></div>
         </div>
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
-            <div className="flex flex-col justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 min-h-screen items-center py-16 md:py-0">
+            {/* Left Content Column */}
+            <div className="flex flex-col justify-center lg:col-span-6 py-12">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="inline-flex items-center px-3 py-1 mb-6 rounded-full bg-amber-600/10 border border-amber-600/20"
               >
-                <span className="text-xs font-medium text-amber-600">Tower Construction Safety Expert</span>
+                <span className="text-xs font-medium text-amber-600">Safety Training Specialist</span>
               </motion.div>
               
               <motion.h1 
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="text-5xl font-bold tracking-tight md:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600"
+                className="text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600"
               >
                 Elevating<br />Safety<br />Standards
               </motion.h1>
@@ -121,7 +89,7 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="mt-6 text-xl text-zinc-400 max-w-lg"
               >
-                Specialized in high-rise construction risk mitigation and Black Swan catastrophe prevention systems.
+                Specialized in construction safety training, rigging certification, and crane operation safety.
               </motion.p>
               
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -171,89 +139,175 @@ export default function Home() {
               </motion.div>
             </div>
             
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative hidden md:flex items-center justify-center"
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div 
-                  animate={{ 
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{ 
-                    duration: 4,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                  }}
-                  className="w-64 h-64 rounded-full bg-amber-600/5"
-                ></motion.div>
-                <motion.div 
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                  }}
-                  transition={{ 
-                    duration: 4,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    delay: 0.5
-                  }}
-                  className="absolute w-72 h-72 rounded-full border border-amber-600/20 opacity-20"
-                ></motion.div>
-              </div>
-              <motion.div 
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="relative w-full h-full max-w-md rounded-2xl overflow-hidden border border-zinc-800"
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-                <div className="absolute inset-0 bg-[url('/hero-image.jpg')] bg-cover bg-center"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.9 }}
-                        className="inline-flex mb-2 items-center px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30"
-                      >
-                        <span className="text-xs font-medium text-emerald-500">SAFETY FIRST</span>
-                      </motion.div>
-                      <motion.h3 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 1.1 }}
-                        className="font-bold text-lg text-zinc-200"
-                      >
-                        Kojin Fox
-                      </motion.h3>
-                      <motion.p 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 1.2 }}
-                        className="text-sm text-zinc-400"
-                      >
-                        Safety Innovation Pioneer
-                      </motion.p>
-                    </div>
-                    <motion.div 
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ 
-                        type: "spring",
-                        stiffness: 260,
-                        damping: 20,
-                        delay: 1.3
-                      }}
-                      className="rounded-full p-2 bg-amber-600"
-                    >
-                      <Shield className="h-5 w-5 text-black" />
-                    </motion.div>
+            {/* Right Certification & Stats Column */}
+            <div className="hidden lg:flex flex-col lg:col-span-6 relative py-16">
+              <div className="grid grid-cols-2 gap-6">
+                {/* Certification Badges */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="p-6 rounded-xl bg-black/50 border border-amber-600/20 backdrop-blur-sm"
+                >
+                  <div className="flex items-center mb-4">
+                    <Shield className="h-6 w-6 text-amber-600 mr-3" />
+                    <h3 className="text-lg font-bold text-zinc-200">IVES Certified Trainer</h3>
                   </div>
-                </div>
-              </motion.div>
+                  <p className="text-zinc-400 text-sm mb-4">Certified to provide training for:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Forklift", "Telehandler", "MEWP", "Skidsteer"].map((cert, i) => (
+                      <motion.span
+                        key={cert}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: 0.6 + (i * 0.1) }}
+                        className="px-2 py-1 bg-amber-600/10 border border-amber-600/20 rounded-md text-amber-500 text-xs"
+                      >
+                        {cert}
+                      </motion.span>
+                    ))}
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="p-6 rounded-xl bg-black/50 border border-emerald-500/20 backdrop-blur-sm"
+                >
+                  <div className="flex items-center mb-4">
+                    <AlertTriangle className="h-6 w-6 text-emerald-500 mr-3" />
+                    <h3 className="text-lg font-bold text-zinc-200">Rigging Specialist</h3>
+                  </div>
+                  <p className="text-zinc-400 text-sm mb-4">Certified in:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Level 1 Rigging", "Level 2 Rigging", "Civil Rigging", "Crane Operations"].map((cert, i) => (
+                      <motion.span
+                        key={cert}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: 0.7 + (i * 0.1) }}
+                        className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-md text-emerald-400 text-xs"
+                      >
+                        {cert}
+                      </motion.span>
+                    ))}
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="p-6 rounded-xl bg-black/50 border border-zinc-600/20 backdrop-blur-sm"
+                >
+                  <div className="flex items-center mb-3">
+                    <FileCheck className="h-6 w-6 text-zinc-400 mr-3" />
+                    <h3 className="text-lg font-bold text-zinc-200">Safety Stats</h3>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-zinc-400">Training Sessions</span>
+                      <div className="flex items-center">
+                        <span className="text-xl font-bold text-amber-500">500+</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-zinc-400">Certified Workers</span>
+                      <div className="flex items-center">
+                        <span className="text-xl font-bold text-emerald-500">1000+</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-zinc-400">Safety Improvement</span>
+                      <div className="flex items-center">
+                        <span className="text-xl font-bold text-amber-500">47%</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  className="p-6 rounded-xl bg-black/50 border border-zinc-600/20 backdrop-blur-sm"
+                >
+                  <div className="flex items-center mb-3">
+                    <ShieldCheck className="h-6 w-6 text-zinc-400 mr-3" />
+                    <h3 className="text-lg font-bold text-zinc-200">Certification Areas</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {[
+                      "Fall Protection",
+                      "WHMIS Training",
+                      "Lockout/Tagout",
+                      "Hoist Operations",
+                      "OFA Level 3"
+                    ].map((item, i) => (
+                      <motion.li
+                        key={item}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: 0.9 + (i * 0.1) }}
+                        className="flex items-center text-sm text-zinc-400"
+                      >
+                        <div className="h-1.5 w-1.5 rounded-full bg-amber-600 mr-2"></div>
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Mobile Certifications - Only visible on mobile */}
+        <div className="lg:hidden w-full px-4 py-12">
+          <div className="space-y-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="p-4 rounded-xl bg-black/50 border border-amber-600/20 backdrop-blur-sm"
+            >
+              <div className="flex items-center mb-2">
+                <Shield className="h-5 w-5 text-amber-600 mr-2" />
+                <h3 className="text-base font-bold text-zinc-200">IVES Certified Trainer</h3>
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {["Forklift", "Telehandler", "MEWP", "Skidsteer"].map((cert) => (
+                  <span
+                    key={cert}
+                    className="px-2 py-0.5 bg-amber-600/10 border border-amber-600/20 rounded-md text-amber-500 text-xs"
+                  >
+                    {cert}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="p-4 rounded-xl bg-black/50 border border-emerald-500/20 backdrop-blur-sm"
+            >
+              <div className="flex items-center mb-2">
+                <AlertTriangle className="h-5 w-5 text-emerald-500 mr-2" />
+                <h3 className="text-base font-bold text-zinc-200">Rigging Specialist</h3>
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {["Level 1 Rigging", "Level 2 Rigging", "Crane Operations"].map((cert) => (
+                  <span
+                    key={cert}
+                    className="px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/20 rounded-md text-emerald-400 text-xs"
+                  >
+                    {cert}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>

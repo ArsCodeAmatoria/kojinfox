@@ -126,7 +126,7 @@ export default function BlackSwan() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-6 text-xl text-text-muted max-w-2xl"
           >
-            Prepare for the unpredictable. Our specialized approach identifies and mitigates catastrophic 
+            Prepare for the unpredictable. My specialized approach identifies and mitigates catastrophic 
             risks that conventional safety assessments overlook.
           </motion.p>
         </div>
@@ -310,9 +310,9 @@ export default function BlackSwan() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <SlideIn>
-              <h2 className="text-3xl font-bold mb-6">Our <span className="text-primary">Methodology</span></h2>
+              <h2 className="text-3xl font-bold mb-6">My <span className="text-primary">Methodology</span></h2>
               <p className="text-text-muted mb-8">
-                We apply a specialized analysis framework that goes beyond conventional risk assessment
+                I apply a specialized analysis framework that goes beyond conventional risk assessment
                 to identify potential Black Swan events in your tower construction projects.
               </p>
               
@@ -326,7 +326,7 @@ export default function BlackSwan() {
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-text-primary">Comprehensive System Mapping</h3>
                     <p className="text-text-muted">
-                      We identify all critical systems, dependencies, and potential cascading failure points in your tower construction.
+                      I identify all critical systems, dependencies, and potential cascading failure points in your tower construction.
                     </p>
                   </div>
                 </div>
@@ -340,7 +340,7 @@ export default function BlackSwan() {
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-text-primary">Scenario Planning & Stress Testing</h3>
                     <p className="text-text-muted">
-                      We develop unlikely but possible scenarios and simulate their impacts on your project
+                      I develop unlikely but possible scenarios and simulate their impacts on your project
                       to identify vulnerabilities.
                     </p>
                   </div>
@@ -355,7 +355,7 @@ export default function BlackSwan() {
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-text-primary">Resilience Enhancement</h3>
                     <p className="text-text-muted">
-                      We develop practical, cost-effective strategies to build resilience against identified 
+                      I develop practical, cost-effective strategies to build resilience against identified 
                       Black Swan scenarios, focusing on critical failure points.
                     </p>
                   </div>
@@ -370,7 +370,7 @@ export default function BlackSwan() {
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-text-primary">Integration with Existing Safety Systems</h3>
                     <p className="text-text-muted">
-                      We ensure our Black Swan prevention strategies complement and enhance your existing safety protocols.
+                      I ensure my Black Swan prevention strategies complement and enhance your existing safety protocols.
                     </p>
                   </div>
                 </div>
@@ -391,7 +391,7 @@ export default function BlackSwan() {
                   </h3>
                   
                   <p className="text-text-muted text-center mb-6">
-                    Our specialized team will analyze your project's vulnerability to Black Swan events 
+                    I will analyze your project's vulnerability to Black Swan events 
                     and provide actionable protection strategies.
                   </p>
                   
@@ -448,7 +448,7 @@ export default function BlackSwan() {
             </FadeIn>
             
             <FadeIn delay={0.3} className="text-xl text-text-muted mb-10 max-w-3xl mx-auto">
-              Our specialized team can help you identify and mitigate the most severe unpredictable risks
+              I can help you identify and mitigate the most severe unpredictable risks
             </FadeIn>
             
             <div>
