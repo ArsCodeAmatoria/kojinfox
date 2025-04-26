@@ -283,6 +283,82 @@ export default function About() {
           </StaggerChildren>
         </div>
       </section>
+
+      {/* Digital Skills Section */}
+      <section className="py-20 bg-zinc-900/30 border-t border-zinc-800/40">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <FadeIn className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-1 mb-4 rounded-full bg-amber-600/10 border border-amber-600/20">
+              <span className="text-xs font-medium text-amber-600">TECHNICAL PROFICIENCY</span>
+            </div>
+            <h2 className="text-4xl font-bold">Digital <span className="text-amber-600">Skills</span></h2>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Office & Productivity */}
+            <RevealOnScroll>
+              <Card className="border-zinc-800 bg-black/40 backdrop-blur-sm h-full">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-semibold mb-6 text-zinc-200">Office & Productivity</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    {["PowerPoint", "Word", "Excel", "Office Suite", "Google Workspace", "Project Management"].map((skill, i) => (
+                      <motion.div 
+                        key={skill}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 * i }}
+                        className="flex items-center gap-2"
+                      >
+                        <div className="h-2 w-2 rounded-full bg-amber-600"></div>
+                        <span className="text-zinc-300">{skill}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </RevealOnScroll>
+
+            {/* Programming & Development */}
+            <RevealOnScroll>
+              <Card className="border-zinc-800 bg-black/40 backdrop-blur-sm h-full">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-semibold mb-6 text-zinc-200">Development & Blockchain</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      "Rust", 
+                      "Haskell", 
+                      "TypeScript", 
+                      "React", 
+                      "Next.js", 
+                      "Expo", 
+                      "React Native", 
+                      "Blockchain", 
+                      "Polkadot", 
+                      "Substrate", 
+                      "ZKID / Substrate", 
+                      "DID",
+                      "SBT (Soul Bound Tokens)"
+                    ].map((skill, i) => (
+                      <motion.div 
+                        key={skill}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 * i }}
+                        className="flex items-center gap-2"
+                      >
+                        <div className="h-2 w-2 rounded-full bg-amber-600"></div>
+                        <span className="text-zinc-300">{skill}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
     </div>
   );
 } 
