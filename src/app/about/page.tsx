@@ -1,6 +1,6 @@
 'use client';
 
-import { Medal, Award, GraduationCap, Calendar, CheckCircle, Link2, Globe, Database, Lock, Award as AwardIcon, Code, FileCode } from "lucide-react";
+import { Medal, Award, GraduationCap, Calendar, CheckCircle, Link2, Globe, Database, Lock, Award as AwardIcon, Code, FileCode, Shield, Network, Cpu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -524,6 +524,62 @@ export default function About() {
                     ))}
                   </div>
                 </motion.div>
+              </div>
+            </RevealOnScroll>
+
+            {/* IT Certifications */}
+            <RevealOnScroll>
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-zinc-200 border-b border-amber-600/30 pb-2 mb-8 inline-block">
+                  IT Certifications
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  {
+                    name: "CompTIA Security+",
+                    description: "Security fundamentals including network security, compliance, threats, vulnerabilities, and security protocols",
+                    icon: <Shield className="h-10 w-10 text-amber-600" />,
+                    details: ["Identity management", "Risk management", "Cryptography", "Network security"]
+                  },
+                  {
+                    name: "CompTIA Network+",
+                    description: "Network technologies, installation, configuration, troubleshooting, and maintenance",
+                    icon: <Network className="h-10 w-10 text-amber-600" />,
+                    details: ["Network architecture", "Security implementation", "Troubleshooting", "Industry standards"]
+                  },
+                  {
+                    name: "CompTIA A+",
+                    description: "Hardware, software troubleshooting, operating system configuration, and security fundamentals",
+                    icon: <Cpu className="h-10 w-10 text-amber-600" />,
+                    details: ["Hardware installation", "Software configuration", "OS troubleshooting", "Security best practices"]
+                  }
+                ].map((cert, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 * i }}
+                    className="bg-black/30 border border-zinc-800 rounded-lg p-6 hover:border-amber-600/30 transition-all duration-300"
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="mr-4 p-3 rounded-full bg-amber-600/10 border border-amber-600/20">
+                        {cert.icon}
+                      </div>
+                      <h4 className="text-lg font-semibold text-zinc-200">{cert.name}</h4>
+                    </div>
+                    <p className="text-sm text-zinc-400 mb-4">{cert.description}</p>
+                    <div className="space-y-2">
+                      {cert.details.map((detail, index) => (
+                        <div key={index} className="flex items-center">
+                          <div className="h-1.5 w-1.5 rounded-full bg-amber-600 mr-2"></div>
+                          <span className="text-xs text-zinc-300">{detail}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </RevealOnScroll>
 
