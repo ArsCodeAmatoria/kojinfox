@@ -71,7 +71,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="inline-flex items-center px-3 py-1 mb-6 rounded-full bg-amber-600/10 border border-amber-600/20"
               >
-                <span className="text-xs font-medium text-amber-600">Safety Training Specialist</span>
+                <span className="text-xs font-medium text-amber-600">Highrise Safety Specialist</span>
               </motion.div>
               
               <motion.h1 
