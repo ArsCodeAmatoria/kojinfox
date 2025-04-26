@@ -64,7 +64,7 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-4 text-xl text-zinc-400 max-w-2xl"
           >
-            Safety Instructor at Bigfoot Crane Company with extensive experience in construction safety
+            Highrise Safety Specialist with extensive experience in construction safety
           </motion.p>
         </div>
       </section>
@@ -103,7 +103,7 @@ export default function About() {
               <FadeIn delay={0.2}>
                 <h2 className="text-3xl font-bold mb-6">Professional <span className="text-amber-600">Profile</span></h2>
                 <p className="text-zinc-400 mb-4">
-                  As a Crane, Rigging & Safety Training Instructor at Bigfoot Crane Company Inc., 
+                  As a Highrise Safety Specialist, 
                   I specialize in comprehensive safety training including Fall Protection, WHMIS, 
                   Civil Rigging, Overhead Crane, Hoist, and Lockout/Tagout procedures.
                 </p>
@@ -162,7 +162,7 @@ export default function About() {
             {[
               {
                 period: "2024 - Present",
-                title: "Crane, Rigging & Safety Training Instructor, Bigfoot Crane Company Inc.",
+                title: "Highrise Safety Specialist",
                 description: "Providing comprehensive safety training including Fall Protection, WHMIS, Civil Rigging, Overhead Crane, Hoist, and Lockout/Tagout procedures. Certified Ives Training Instructor.",
                 badges: [
                   { text: "Safety Training", color: "bg-emerald-500 text-black" },
