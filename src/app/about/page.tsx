@@ -103,9 +103,9 @@ export default function About() {
               <FadeIn delay={0.2}>
                 <h2 className="text-3xl font-bold mb-6">Professional <span className="text-amber-600">Profile</span></h2>
                 <p className="text-zinc-400 mb-4">
-                  As a Highrise Safety Specialist at Bigfoot Crane Company Inc., 
-                  I specialize in comprehensive safety training including Fall Protection, WHMIS, 
-                  Civil Rigging, Overhead Crane, Hoist, and Lockout/Tagout procedures.
+                  As a Highrise Safety Specialist with expertise in construction safety, I currently work as a 
+                  Training Instructor at Bigfoot Crane Company Inc., specializing in comprehensive safety training 
+                  including Fall Protection, WHMIS, Civil Rigging, Overhead Crane, Hoist, and Lockout/Tagout procedures.
                 </p>
                 <p className="text-zinc-400 mb-8">
                   With extensive experience as both a Carpenter and Construction Safety Officer (CSO) 
@@ -161,18 +161,9 @@ export default function About() {
           <div className="space-y-14">
             {[
               {
-                period: "2024 - Present",
-                title: "Highrise Safety Specialist",
-                description: "Providing comprehensive safety training including Fall Protection, WHMIS, Civil Rigging, Overhead Crane, Hoist, and Lockout/Tagout procedures at Bigfoot Crane Company Inc. as a Certified Ives Training Instructor.",
-                badges: [
-                  { text: "Safety Training", color: "bg-emerald-500 text-black" },
-                  { text: "Certification", color: "bg-emerald-500 text-black" }
-                ]
-              },
-              {
-                period: "2021 - 2024",
+                period: "2021 - Present",
                 title: "Crane, Rigging & Safety Training Instructor, Bigfoot Crane Company Inc.",
-                description: "Delivered specialized safety programs focused on tower crane operations, rigging procedures, and fall protection systems. Responsible for certification courses and developing tailored training materials for various construction equipment.",
+                description: "Delivering specialized safety programs focused on tower crane operations, rigging procedures, and fall protection systems. Responsible for certification courses and developing tailored training materials for various construction equipment.",
                 badges: [
                   { text: "IVES Certified", color: "bg-amber-600 text-black" },
                   { text: "Training", color: "bg-amber-600 text-black" }
