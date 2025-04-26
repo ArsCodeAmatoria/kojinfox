@@ -1,6 +1,6 @@
 'use client';
 
-import { Medal, Award, GraduationCap, Calendar, CheckCircle } from "lucide-react";
+import { Medal, Award, GraduationCap, Calendar, CheckCircle, Link2, Globe, Database, Lock, Award as AwardIcon, Code, FileCode } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -392,6 +392,18 @@ export default function About() {
                         color: "bg-amber-600"
                       },
                       {
+                        name: "Python",
+                        description: "Versatile language for data analysis and safety system automation",
+                        proficiency: "Advanced",
+                        color: "bg-amber-600"
+                      },
+                      {
+                        name: "C",
+                        description: "Low-level programming for embedded safety systems and hardware interfaces",
+                        proficiency: "Intermediate",
+                        color: "bg-amber-500"
+                      },
+                      {
                         name: "Haskell",
                         description: "Functional programming for robust, maintainable applications",
                         proficiency: "Intermediate",
@@ -474,27 +486,27 @@ export default function About() {
                       {
                         name: "Blockchain",
                         description: "Immutable record-keeping for safety certification verification",
-                        icon: "🔗"
+                        icon: <Link2 className="h-6 w-6 text-amber-600" />
                       },
                       {
                         name: "Polkadot",
                         description: "Multi-chain network for connected safety compliance systems",
-                        icon: "⚪"
+                        icon: <Globe className="h-6 w-6 text-amber-600" />
                       },
                       {
                         name: "Substrate",
                         description: "Blockchain framework for custom safety verification networks",
-                        icon: "⬛"
+                        icon: <Database className="h-6 w-6 text-amber-600" />
                       },
                       {
                         name: "ZKID / DID",
                         description: "Zero-knowledge and decentralized identity solutions for private credential verification",
-                        icon: "🔐"
+                        icon: <Lock className="h-6 w-6 text-amber-600" />
                       },
                       {
                         name: "SBT",
                         description: "Soul Bound Tokens for permanent safety certification records",
-                        icon: "🏆"
+                        icon: <AwardIcon className="h-6 w-6 text-amber-600" />
                       }
                     ].map((tech, i) => (
                       <motion.div 
@@ -505,7 +517,7 @@ export default function About() {
                         transition={{ delay: 0.1 * i }}
                         className="flex flex-col items-center text-center p-4 rounded-lg border border-zinc-800/50 hover:border-amber-600/30 transition-all duration-300"
                       >
-                        <div className="text-2xl mb-3">{tech.icon}</div>
+                        <div className="mb-3">{tech.icon}</div>
                         <h5 className="font-medium text-zinc-300 mb-2">{tech.name}</h5>
                         <p className="text-xs text-zinc-400">{tech.description}</p>
                       </motion.div>
