@@ -141,124 +141,24 @@ export default function Home() {
             
             {/* Right Certification & Stats Column */}
             <div className="hidden lg:flex flex-col lg:col-span-6 relative py-16">
-              <div className="grid grid-cols-2 gap-6">
-                {/* Certification Badges */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  className="p-6 rounded-xl bg-black/50 border border-amber-600/20 backdrop-blur-sm"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="relative w-full h-[500px] rounded-xl overflow-hidden border border-amber-600/20 shadow-xl shadow-amber-600/5"
+              >
+                <div className="absolute inset-0 z-0 bg-black/20"></div>
+                <video
+                  className="w-full h-full"
+                  autoPlay
+                  loop
+                  playsInline
+                  controls
                 >
-                  <div className="flex items-center mb-4">
-                    <Shield className="h-6 w-6 text-amber-600 mr-3" />
-                    <h3 className="text-lg font-bold text-zinc-200">IVES Certified Trainer</h3>
-                  </div>
-                  <p className="text-zinc-400 text-sm mb-4">Certified to provide training for:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {["Forklift", "Telehandler", "MEWP", "Skidsteer"].map((cert, i) => (
-                      <motion.span
-                        key={cert}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: 0.6 + (i * 0.1) }}
-                        className="px-2 py-1 bg-amber-600/10 border border-amber-600/20 rounded-md text-amber-500 text-xs"
-                      >
-                        {cert}
-                      </motion.span>
-                    ))}
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  className="p-6 rounded-xl bg-black/50 border border-emerald-500/20 backdrop-blur-sm"
-                >
-                  <div className="flex items-center mb-4">
-                    <AlertTriangle className="h-6 w-6 text-emerald-500 mr-3" />
-                    <h3 className="text-lg font-bold text-zinc-200">Rigging Specialist</h3>
-                  </div>
-                  <p className="text-zinc-400 text-sm mb-4">Certified in:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {["Level 1 Rigging", "Level 2 Rigging", "Civil Rigging", "Crane Operations"].map((cert, i) => (
-                      <motion.span
-                        key={cert}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: 0.7 + (i * 0.1) }}
-                        className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-md text-emerald-400 text-xs"
-                      >
-                        {cert}
-                      </motion.span>
-                    ))}
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                  className="p-6 rounded-xl bg-black/50 border border-zinc-600/20 backdrop-blur-sm"
-                >
-                  <div className="flex items-center mb-3">
-                    <FileCheck className="h-6 w-6 text-zinc-400 mr-3" />
-                    <h3 className="text-lg font-bold text-zinc-200">Safety Stats</h3>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-zinc-400">Training Sessions</span>
-                      <div className="flex items-center">
-                        <span className="text-xl font-bold text-amber-500">500+</span>
-                      </div>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-zinc-400">Certified Workers</span>
-                      <div className="flex items-center">
-                        <span className="text-xl font-bold text-emerald-500">1000+</span>
-                      </div>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-zinc-400">Safety Improvement</span>
-                      <div className="flex items-center">
-                        <span className="text-xl font-bold text-amber-500">47%</span>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  className="p-6 rounded-xl bg-black/50 border border-zinc-600/20 backdrop-blur-sm"
-                >
-                  <div className="flex items-center mb-3">
-                    <ShieldCheck className="h-6 w-6 text-zinc-400 mr-3" />
-                    <h3 className="text-lg font-bold text-zinc-200">Certification Areas</h3>
-                  </div>
-                  <ul className="space-y-2">
-                    {[
-                      "Fall Protection",
-                      "WHMIS Training",
-                      "Lockout/Tagout",
-                      "Hoist Operations",
-                      "OFA Level 3"
-                    ].map((item, i) => (
-                      <motion.li
-                        key={item}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: 0.9 + (i * 0.1) }}
-                        className="flex items-center text-sm text-zinc-400"
-                      >
-                        <div className="h-1.5 w-1.5 rounded-full bg-amber-600 mr-2"></div>
-                        {item}
-                      </motion.li>
-                    ))}
-                  </ul>
-                </motion.div>
-              </div>
+                  <source src="/Preventing%20the%20Unthinkable_%20Construction%20Safety%2C%20Black%20Swan%20Even.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </motion.div>
             </div>
           </div>
         </div>
