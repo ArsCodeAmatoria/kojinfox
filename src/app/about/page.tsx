@@ -107,10 +107,15 @@ export default function About() {
                   Training Instructor at Bigfoot Crane Company Inc., specializing in comprehensive safety training 
                   including Fall Protection, WHMIS, Civil Rigging, Overhead Crane, Hoist, and Lockout/Tagout procedures.
                 </p>
-                <p className="text-zinc-400 mb-8">
+                <p className="text-zinc-400 mb-4">
                   With extensive experience as both a Carpenter and Construction Safety Officer (CSO) 
                   on major projects across the Lower Mainland, including Vancouver House, Olympic Village, 
                   and Oakridge Mall, I bring practical expertise to every safety solution I provide.
+                </p>
+                <p className="text-zinc-400 mb-8">
+                  As an IBM-certified Data Scientist, I now integrate AI and predictive analytics into construction safety, 
+                  developing early warning systems that identify potential Black Swan events before they occur. This data-driven 
+                  approach allows for proactive risk mitigation rather than reactive crisis management.
                 </p>
               </FadeIn>
               
@@ -120,7 +125,9 @@ export default function About() {
                   "Rigging Training",
                   "Crane Safety",
                   "Hoist Safety",
-                  "WHMIS"
+                  "WHMIS",
+                  "AI Risk Prediction",
+                  "IBM Data Science"
                 ].map((skill, index) => (
                   <motion.div
                     key={index}
@@ -667,6 +674,50 @@ export default function About() {
                 </CardContent>
               </Card>
             </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <FadeIn className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-1 mb-4 rounded-full bg-amber-600/10 border border-amber-600/20">
+              <span className="text-xs font-medium text-amber-600">EXPERTISE</span>
+            </div>
+            <h2 className="text-4xl font-bold">Certifications & <span className="text-amber-600">Training</span></h2>
+          </FadeIn>
+          
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {/* IBM Data Science Professional Certificate */}
+            <ScaleFadeIn className="col-span-1">
+              <Card className="bg-zinc-900/40 border border-zinc-800 hover:border-amber-600/30 transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-start mb-4">
+                    <div className="rounded-full p-2 mr-3 bg-blue-600/10">
+                      <Cpu className="h-5 w-5 text-blue-500" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-zinc-200">IBM Data Science Professional</h3>
+                      <p className="text-xs text-zinc-500">IBM • 2023</p>
+                    </div>
+                  </div>
+                  <p className="text-zinc-400 text-sm mb-4">
+                    Comprehensive data science certification covering machine learning, data analysis, 
+                    Python, and AI applications for industry.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["ML Algorithms", "Predictive Analytics", "Python", "Risk Modeling"].map((skill) => (
+                      <span key={skill} className="px-2 py-1 bg-blue-600/10 border border-blue-600/30 rounded-md text-blue-400 text-xs">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </ScaleFadeIn>
+
+            {/* Original certifications follow... */}
           </div>
         </div>
       </section>

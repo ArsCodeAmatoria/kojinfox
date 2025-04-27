@@ -89,7 +89,7 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="mt-6 text-xl text-zinc-400 max-w-lg"
               >
-                Specialized in construction safety training, rigging certification, and crane operation safety.
+                Specialized in construction safety training, rigging certification, and AI-powered risk prediction. IBM Data Science Certified.
               </motion.p>
               
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">

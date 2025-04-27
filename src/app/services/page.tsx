@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { FileCheck, HardHat, AlertTriangle, ShieldCheck, BookOpen, Hammer, LucideIcon, ArrowRight } from "lucide-react";
+import { FileCheck, HardHat, AlertTriangle, ShieldCheck, BookOpen, Hammer, LucideIcon, ArrowRight, Cpu, BarChart } from "lucide-react";
 import { ServiceCard } from "@/components/ui/service-card";
 import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
@@ -90,6 +90,19 @@ const services: ServiceType[] = [
     ],
     icon: <Hammer className="h-5 w-5" />,
   },
+  {
+    title: "AI-Powered Risk Assessment",
+    description: "Advanced predictive analytics using AI and data science to identify potential safety hazards before they become incidents.",
+    details: [
+      "Leveraging IBM Data Science methodology",
+      "Real-time data analysis from equipment sensors",
+      "Predictive maintenance recommendations",
+      "Weather pattern impact assessment",
+      "Early warning system implementation"
+    ],
+    icon: <Cpu className="h-5 w-5" />,
+    highlight: true,
+  },
 ];
 
 export default function Services() {
@@ -149,7 +162,7 @@ export default function Services() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-4 text-xl text-text-muted max-w-2xl"
           >
-            IVES Certified Trainer offering comprehensive safety training solutions for construction and industrial operations
+            IVES Certified Trainer offering comprehensive safety training solutions and IBM-certified AI-powered risk assessment for construction and industrial operations
           </motion.p>
         </div>
       </section>

@@ -15,7 +15,8 @@ import {
   Scroll, 
   Send, 
   ArrowRight,
-  XCircle
+  XCircle,
+  Cpu
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
@@ -126,9 +127,20 @@ export default function BlackSwan() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-6 text-xl text-text-muted max-w-2xl"
           >
-            Prepare for the unpredictable. My specialized approach identifies and mitigates catastrophic 
-            risks that conventional safety assessments overlook.
+            Prepare for the unpredictable. My specialized approach combines IBM-certified data science expertise with AI-powered analytics to identify and mitigate catastrophic risks that conventional safety assessments overlook.
           </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-6 flex items-center"
+          >
+            <div className="flex items-center px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
+              <Cpu className="h-4 w-4 text-blue-500 mr-2" />
+              <span className="text-xs font-medium text-blue-500">IBM Data Science Certified</span>
+            </div>
+          </motion.div>
         </div>
       </section>
       
