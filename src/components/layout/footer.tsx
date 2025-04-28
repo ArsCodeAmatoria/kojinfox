@@ -63,11 +63,21 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold text-text">Expertise</h3>
             <ul className="space-y-2 text-sm">
-              <li className="hover:text-primary">Risk Assessment</li>
-              <li className="hover:text-primary">Vertical Transport Systems</li>
-              <li className="hover:text-primary">Crisis Planning</li>
-              <li className="hover:text-primary">Safety Training</li>
-              <li className="hover:text-primary">Catastrophic Risk Prevention</li>
+              <li>
+                <Link href="/services#risk-assessment" className="hover:text-primary">Risk Assessment</Link>
+              </li>
+              <li>
+                <Link href="/services#vertical-transport" className="hover:text-primary">Vertical Transport Systems</Link>
+              </li>
+              <li>
+                <Link href="/services#crisis-planning" className="hover:text-primary">Crisis Planning</Link>
+              </li>
+              <li>
+                <Link href="/services#safety-training" className="hover:text-primary">Safety Training</Link>
+              </li>
+              <li>
+                <Link href="/services#catastrophic-prevention" className="hover:text-primary">Catastrophic Risk Prevention</Link>
+              </li>
             </ul>
           </div>
           

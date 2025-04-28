@@ -7,11 +7,12 @@ interface ServiceCardProps {
   description: string;
   icon: ReactNode;
   className?: string;
+  id?: string;
 }
 
-export function ServiceCard({ title, description, icon, className }: ServiceCardProps) {
+export function ServiceCard({ title, description, icon, className, id }: ServiceCardProps) {
   return (
-    <Card className={cn("transition-all hover:shadow-md hover:border-amber-200/50", className)}>
+    <Card id={id} className={cn("transition-all hover:shadow-md hover:border-amber-200/50", className)}>
       <CardHeader className="pb-2">
         <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-md bg-amber-600/10 text-amber-600">
           {icon}

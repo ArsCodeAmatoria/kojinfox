@@ -178,6 +178,11 @@ export default function Services() {
                   description={service.description}
                   icon={service.icon}
                   className={service.highlight ? "border-primary/50 bg-background-darker" : "bg-background-darker/70"}
+                  id={service.title === "AI-Powered Risk Assessment" ? "risk-assessment" : 
+                      service.title === "Crane & Hoist Training" ? "vertical-transport" :
+                      service.title === "Lockout/Tagout Training" ? "crisis-planning" :
+                      service.title === "Equipment Operation Training" ? "safety-training" :
+                      service.title === "Rigging Training" ? "catastrophic-prevention" : ""}
                 />
                 <motion.ul 
                   initial={{ opacity: 0 }}
