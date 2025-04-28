@@ -174,6 +174,8 @@ export default function Home() {
                   loop
                   playsInline
                   controls
+                  crossOrigin="anonymous"
+                  controlsList="nodownload"
                 >
                   <source src="/Preventing%20the%20Unthinkable_%20Construction%20Safety%2C%20Black%20Swan%20Even.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
