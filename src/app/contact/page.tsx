@@ -320,18 +320,24 @@ export default function Contact() {
                 </RevealOnScroll>
               </div>
               
-              {/* Google Map placeholder */}
+              {/* Google Map */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="mt-6 aspect-video rounded-xl bg-black/40 border border-zinc-800 overflow-hidden"
               >
-                <div className="h-full w-full p-4 flex items-center justify-center">
-                  <p className="text-center text-zinc-400">
-                    Google Map Embed would go here
-                  </p>
-                </div>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2606.9790699883283!2d-122.84776542326227!3d49.199444879322556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d97fe1c4e4e9%3A0x73fee1676f13c949!2s13750%20100%20Ave%20%232907%2C%20Surrey%2C%20BC%20V3T%200L3%2C%20Canada!5e0!3m2!1sen!2sus!4v1700683252587!5m2!1sen!2sus" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={false} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Office Location Map"
+                  className="grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-300"
+                ></iframe>
               </motion.div>
             </div>
           </div>
