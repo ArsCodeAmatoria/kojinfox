@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Github, Globe, ExternalLink } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 export function Footer() {
@@ -19,6 +19,24 @@ export function Footer() {
             <p className="mt-4 text-sm">
               Highrise Safety Specialist & Incident Prevention Expert
             </p>
+            <div className="mt-4 flex space-x-3">
+              <a 
+                href="https://github.com/ArsCodeAmatoria" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center text-zinc-400 hover:text-amber-500 transition-colors"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.arscode.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center text-zinc-400 hover:text-amber-500 transition-colors"
+              >
+                <Globe className="h-5 w-5" />
+              </a>
+            </div>
           </div>
           
           <div>
@@ -68,6 +86,30 @@ export function Footer() {
                 <MapPin className="mr-2 h-4 w-4 text-primary" />
                 <span>Surrey, BC V3T 0L3</span>
               </li>
+              <li className="flex items-center mt-4">
+                <Github className="mr-2 h-4 w-4 text-primary" />
+                <a 
+                  href="https://github.com/ArsCodeAmatoria" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-500 flex items-center"
+                >
+                  ArsCodeAmatoria
+                  <ExternalLink className="ml-1 h-3 w-3" />
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Globe className="mr-2 h-4 w-4 text-primary" />
+                <a 
+                  href="https://www.arscode.org" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-500 flex items-center"
+                >
+                  arscode.org
+                  <ExternalLink className="ml-1 h-3 w-3" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -78,9 +120,27 @@ export function Footer() {
           <p className="text-xs text-text-dark">
             © {new Date().getFullYear()} Kojin Fox. All rights reserved.
           </p>
-          <p className="text-xs text-primary">
-            Safety Expert. Incident Prevention Specialist.
-          </p>
+          <div className="flex items-center space-x-4">
+            <p className="text-xs text-primary">
+              Safety Expert. Incident Prevention Specialist.
+            </p>
+            <a 
+              href="https://github.com/ArsCodeAmatoria" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-amber-500 transition-colors"
+            >
+              <Github className="h-4 w-4" />
+            </a>
+            <a 
+              href="https://www.arscode.org" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-amber-500 transition-colors"
+            >
+              <Globe className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

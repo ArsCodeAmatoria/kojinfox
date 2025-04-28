@@ -11,42 +11,45 @@ import { motion } from "framer-motion";
 
 const skills = [
   {
-    title: "Risk Assessment",
-    description: "Expert assessment of potential hazards in high-rise construction with focus on prevention strategies.",
-    icon: <FileCheck className="h-5 w-5" />,
-  },
-  {
-    title: "Vertical Transport Systems",
-    description: "Specialized knowledge of tower crane and hoist safety operations in complex construction environments.",
-    icon: <Shield className="h-5 w-5" />,
-  },
-  {
-    title: "Catastrophic Risk Prevention",
-    description: "Identification and mitigation of rare but high-impact failure scenarios in tower construction.",
+    title: "AI Risk Prediction",
+    description: "Implementing machine learning models that analyze historical data to predict and prevent safety incidents before they occur.",
     icon: <AlertTriangle className="h-5 w-5" />,
   },
   {
-    title: "Crisis Response",
-    description: "Development of practical emergency protocols for rapid, effective response to construction incidents.",
+    title: "Vertical Transport Systems",
+    description: "Expert analysis and certification of lifts, hoists, and crane systems used in high-rise construction environments.",
+    icon: <Shield className="h-5 w-5" />,
+  },
+  {
+    title: "Predictive Maintenance",
+    description: "Using AI-powered sensors and data analysis to identify equipment failures before they lead to catastrophic events.",
+    icon: <FileCheck className="h-5 w-5" />,
+  },
+  {
+    title: "Crisis Response Systems",
+    description: "Development of automated emergency protocols and digital communication systems for rapid response during critical incidents.",
     icon: <ShieldCheck className="h-5 w-5" />,
   },
 ];
 
 const testimonials = [
   {
-    quote: "Kojin's expertise was instrumental in overhauling my company's safety protocols. His insights helped us prevent potential incidents during our most complex tower project.",
-    name: "Sarah Johnson",
-    company: "Skyline Developers Inc.",
+    quote: "AI-powered risk prediction systems can transform safety management in construction. They can identify potential structural vulnerabilities that would be impossible to detect with traditional methods.",
+    name: "Dr. Robert Thompson",
+    role: "Safety Officer",
+    imageSrc: "/testimonials/robert-thompson.jpg",
   },
   {
-    quote: "Hiring Kojin was one of the best decisions I made. His approach to identifying overlooked risks completely changed how I think about construction safety.",
-    name: "Michael Chen",
-    company: "Vertical Structures Ltd.",
+    quote: "Implementing AI safety analysis can dramatically reduce near-miss incidents. The combination of construction expertise and data science creates solutions tailored to high-rise projects.",
+    name: "Lisa Wong",
+    role: "Project Director",
+    imageSrc: "/testimonials/lisa-wong.jpg",
   },
   {
-    quote: "As a senior safety manager, I was impressed by Kojin's practical knowledge and his ability to train my team effectively. He bridges the gap between theory and application.",
-    name: "Elena Rodriguez",
-    company: "Summit Construction Group",
+    quote: "Predictive maintenance models can detect failure patterns in equipment weeks before any visible signs appear. This AI-driven approach prevents downtime and serious safety incidents.",
+    name: "James Carpenter",
+    role: "Operations Manager",
+    imageSrc: "/testimonials/james-carpenter.jpg",
   },
 ];
 
@@ -350,41 +353,27 @@ export default function Home() {
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <FadeIn className="flex flex-col items-center mb-16">
             <div className="inline-flex items-center px-4 py-1 mb-4 rounded-full bg-amber-600/10 border border-amber-600/20">
-              <span className="text-xs font-medium text-amber-600">CLIENT SUCCESS</span>
+              <span className="text-xs font-medium text-amber-600">AI POTENTIAL</span>
             </div>
             <h2 className="text-4xl font-bold tracking-tight md:text-5xl text-center">
-              What Industry <span className="text-amber-600">Leaders Say</span>
+              Expert <span className="text-amber-600">Perspectives</span>
             </h2>
             <p className="mt-4 text-zinc-400 max-w-2xl text-center">
-              Feedback from construction professionals who've experienced 
-              my innovative safety systems in action
+              Industry professionals share how AI safety systems can 
+              transform construction and prevent catastrophic events
             </p>
           </FadeIn>
 
           <StaggerChildren className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {testimonials.map((testimonial, index) => (
-              <ScaleFadeIn key={index} className="relative rounded-2xl border border-zinc-800 bg-black/50 backdrop-blur-sm p-8 h-full">
-                <div className="absolute top-0 right-0 -mt-2 -mr-2 rounded-full bg-amber-600 text-black p-2 z-10">
-                  <div className="w-6 h-6 flex items-center justify-center">
-                    <span className="text-sm font-semibold">{index + 1}</span>
-                  </div>
-                </div>
-                <div className="mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-amber-500 inline-block mr-1">★</span>
-                  ))}
-                </div>
-                <blockquote className="mb-6 text-zinc-200 relative">
-                  <span className="text-amber-600 absolute -top-3 -left-1 text-4xl opacity-20">"</span>
-                  <p className="relative z-10">{testimonial.quote}</p>
-                </blockquote>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 mr-4"></div>
-                  <div>
-                    <p className="text-zinc-200 font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-zinc-400">{testimonial.company}</p>
-                  </div>
-                </div>
+              <ScaleFadeIn key={index} className="h-full">
+                <TestimonialCard 
+                  quote={testimonial.quote}
+                  name={testimonial.name}
+                  role={testimonial.role}
+                  imageSrc={testimonial.imageSrc}
+                  index={index + 1}
+                />
               </ScaleFadeIn>
             ))}
           </StaggerChildren>

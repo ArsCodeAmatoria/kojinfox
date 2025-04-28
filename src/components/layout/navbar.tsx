@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Home, Info, Wrench, AlertTriangle, Phone } from "lucide-react";
 import { 
   NavigationMenu,
@@ -21,25 +22,31 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-800/20 bg-black/70 backdrop-blur-md supports-[backdrop-filter]:bg-black/40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex h-16 items-center">
-        <div className="mr-4 hidden md:flex">
-          <Link href="/" className="flex items-center space-x-2">
-            <div
-              className="font-bold text-2xl transition-all duration-200 hover:rotate-6 hover:scale-110"
-            >
-              <span className="text-amber-500">Kojin</span>
-              <span className="text-white">Fox</span>
+        <div className="mr-4 hidden md:flex items-center">
+          <Link href="/" className="flex items-center">
+            <div className="transition-all duration-200 hover:scale-110 py-2">
+              <Image 
+                src="/kojinfox-logo.png" 
+                alt="KojinFox Logo" 
+                width={120} 
+                height={40} 
+                className="invert translate-y-3" 
+              />
             </div>
           </Link>
         </div>
 
         <div className="flex flex-1 items-center justify-between">
           <div className="md:hidden">
-            <Link href="/" className="flex items-center space-x-2">
-              <div
-                className="font-bold text-2xl transition-all duration-200 hover:rotate-6 hover:scale-110"
-              >
-                <span className="text-amber-500">Kojin</span>
-                <span className="text-white">Fox</span>
+            <Link href="/" className="flex items-center">
+              <div className="transition-all duration-200 hover:scale-110 py-1">
+                <Image 
+                  src="/kojinfox-logo.png" 
+                  alt="KojinFox Logo" 
+                  width={100} 
+                  height={32} 
+                  className="invert translate-y-3" 
+                />
               </div>
             </Link>
           </div>
