@@ -47,8 +47,8 @@ export default function Contact() {
     const message = formData.get('message') as string;
     
     try {
-      // Submit form data to Mailchimp API route
-      const response = await fetch('/api/mailchimp', {
+      // Submit form data to direct email API route
+      const response = await fetch('/api/email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
