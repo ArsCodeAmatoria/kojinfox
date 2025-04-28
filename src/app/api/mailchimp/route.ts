@@ -56,12 +56,19 @@ export async function POST(request: Request) {
         success: true, 
         message: 'Form submitted successfully!'  
       });
-    } catch (mailchimpError: any) {
+    } catch (mailchimpError: unknown) {
       console.error('Mailchimp API Error:', mailchimpError);
       
       // Handle mailchimp-specific errors
-      if (mailchimpError.response && mailchimpError.response.body) {
-        const errorDetails = mailchimpError.response.body;
+      if (
+        typeof mailchimpError === 'object' && 
+        mailchimpError !== null && 
+        'response' in mailchimpError && 
+        mailchimpError.response && 
+        typeof mailchimpError.response === 'object' && 
+        'body' in mailchimpError.response
+      ) {
+        const errorDetails = mailchimpError.response.body as { title?: string };
         
         // Check if it's a duplicate subscriber (already exists)
         if (errorDetails.title === 'Member Exists') {
