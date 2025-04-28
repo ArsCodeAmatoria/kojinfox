@@ -8,6 +8,7 @@ import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { Button } from "@/components/ui/button";
 import { FadeIn, SlideIn, RevealOnScroll, StaggerChildren, ScaleFadeIn, MotionButton, MotionContainer } from "@/components/ui/motion";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const skills = [
   {
@@ -61,7 +62,14 @@ export default function Home() {
         {/* Background Elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/80"></div>
-          <div className="absolute inset-0 bg-[url('/hero-image.png')] bg-contain bg-center opacity-20"></div>
+          <Image 
+            src="/hero-image.png"
+            alt="Construction site background"
+            fill
+            priority
+            className="object-cover opacity-20"
+            quality={90}
+          />
         </div>
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -128,8 +136,16 @@ export default function Home() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: 1 + (i * 0.1) }}
-                      className={`w-10 h-10 rounded-full border-2 border-black bg-[url('/client-${i}.jpg')] bg-cover bg-center`}
-                    ></motion.div>
+                      className="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
+                    >
+                      <Image
+                        src={`/testimonials/${i === 1 ? 'robert-thompson' : i === 2 ? 'lisa-wong' : 'james-carpenter'}.jpg`}
+                        alt={`Client ${i}`}
+                        width={40}
+                        height={40}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
                   ))}
                 </div>
                 <div className="text-sm text-zinc-400">
@@ -150,17 +166,28 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="relative w-full h-[500px] rounded-xl overflow-hidden border border-amber-600/20 shadow-xl shadow-amber-600/5"
               >
-                <div className="absolute inset-0 z-0 bg-black/20"></div>
+                <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/30 to-black/60"></div>
                 <video
-                  className="w-full h-full"
+                  className="w-full h-full object-cover"
+                  poster="/hero-image.png"
                   autoPlay
                   loop
                   playsInline
                   controls
                 >
                   <source src="/Preventing%20the%20Unthinkable_%20Construction%20Safety%2C%20Black%20Swan%20Even.mp4" type="video/mp4" />
+                  <track 
+                    default 
+                    kind="subtitles" 
+                    srcLang="en" 
+                    src="/subtitles.vtt" 
+                  />
                   Your browser does not support the video tag.
                 </video>
+                <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/50 backdrop-blur-sm p-3 rounded-lg">
+                  <h3 className="text-amber-500 font-medium text-sm">Preventing the Unthinkable</h3>
+                  <p className="text-zinc-300 text-xs">Construction Safety & Black Swan Events</p>
+                </div>
               </motion.div>
             </div>
           </div>

@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --no-lint",
+    "build": "node vercel-build.js",
+    "vercel-build": "node vercel-build.js",
     "start": "next start",
     "lint": "next lint"
   },

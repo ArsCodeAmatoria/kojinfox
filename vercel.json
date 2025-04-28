@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "SKIP_ESLINT=1 DISABLE_ESLINT_PLUGIN=true NEXT_DISABLE_ESLINT=1 next build",
+  "buildCommand": "npm run vercel-build",
   "installCommand": "npm install",
   "framework": "nextjs",
   "devCommand": "npm run dev",
