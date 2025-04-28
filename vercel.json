@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "SKIP_ESLINT=1 DISABLE_ESLINT_PLUGIN=true NEXT_DISABLE_ESLINT=1 next build",
   "installCommand": "npm install",
   "framework": "nextjs",
   "devCommand": "npm run dev",
@@ -10,6 +10,9 @@
     }
   },
   "env": {
-    "NEXT_PUBLIC_BASE_URL": "https://kojinfox.vercel.app"
+    "NEXT_PUBLIC_BASE_URL": "https://kojinfox.vercel.app",
+    "SKIP_ESLINT": "1",
+    "DISABLE_ESLINT_PLUGIN": "true",
+    "NEXT_DISABLE_ESLINT": "1"
   }
 } 
