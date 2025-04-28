@@ -176,12 +176,6 @@ export default function Home() {
                   controls
                 >
                   <source src="/Preventing%20the%20Unthinkable_%20Construction%20Safety%2C%20Black%20Swan%20Even.mp4" type="video/mp4" />
-                  <track 
-                    default 
-                    kind="subtitles" 
-                    srcLang="en" 
-                    src="/subtitles.vtt" 
-                  />
                   Your browser does not support the video tag.
                 </video>
                 <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/50 backdrop-blur-sm p-3 rounded-lg">
