@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn, SlideIn, RevealOnScroll, StaggerChildren, ScaleFadeIn, MotionButton, MotionContainer } from "@/components/ui/motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRef, useState } from "react";
 
 const skills = [
   {
@@ -55,6 +56,23 @@ const testimonials = [
 ];
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const handlePause = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -168,26 +186,31 @@ export default function Home() {
               >
                 <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/30 to-black/60"></div>
                 <video
+                  ref={videoRef}
                   className="w-full h-full object-cover"
                   poster="/hero-image.png"
                   autoPlay
                   loop
                   playsInline
                   controls
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
                   crossOrigin="anonymous"
                   controlsList="nodownload"
                 >
                   <source src="/Preventing%20the%20Unthinkable_%20Construction%20Safety%2C%20Black%20Swan%20Even.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                {/* Play button overlay */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-                  <div className="w-20 h-20 rounded-full bg-amber-600/80 flex items-center justify-center shadow-lg transform transition-transform hover:scale-110">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+                {/* Play button overlay - only shown when video is not playing */}
+                {!isPlaying && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                    <div className="w-20 h-20 rounded-full bg-amber-600/80 flex items-center justify-center shadow-lg transform transition-transform hover:scale-110">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/50 backdrop-blur-sm p-3 rounded-lg">
                   <h3 className="text-amber-500 font-medium text-sm">Preventing the Unthinkable</h3>
                   <p className="text-zinc-300 text-xs">Construction Safety & Black Swan Events</p>
