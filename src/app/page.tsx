@@ -180,6 +180,14 @@ export default function Home() {
                   <source src="/Preventing%20the%20Unthinkable_%20Construction%20Safety%2C%20Black%20Swan%20Even.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                {/* Play button overlay */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                  <div className="w-20 h-20 rounded-full bg-amber-600/80 flex items-center justify-center shadow-lg transform transition-transform hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
                 <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/50 backdrop-blur-sm p-3 rounded-lg">
                   <h3 className="text-amber-500 font-medium text-sm">Preventing the Unthinkable</h3>
                   <p className="text-zinc-300 text-xs">Construction Safety & Black Swan Events</p>
