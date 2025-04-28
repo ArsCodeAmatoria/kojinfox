@@ -29,16 +29,53 @@ import Link from "next/link";
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage('');
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    // Get form data
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const company = formData.get('company') as string;
+    const service = formData.get('service') as string;
+    const message = formData.get('message') as string;
+    
+    try {
+      // Submit form data to Mailchimp API route
+      const response = await fetch('/api/mailchimp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          service,
+          message,
+        }),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+      
+      // Success - show success message
       setIsSubmitted(true);
-    }, 1500);
+    } catch (error) {
+      // Handle error
+      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -149,6 +186,15 @@ export default function Contact() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {errorMessage && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 bg-red-900/20 border border-red-600/20 rounded-md text-red-400 text-sm"
+                    >
+                      {errorMessage}
+                    </motion.div>
+                  )}
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -160,6 +206,7 @@ export default function Contact() {
                       </label>
                       <Input
                         id="name"
+                        name="name"
                         placeholder="Your name"
                         required
                         className="bg-black/40 border-zinc-800 focus:border-amber-600/50 text-zinc-300"
@@ -175,6 +222,7 @@ export default function Contact() {
                       </label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         placeholder="your.email@example.com"
                         required
@@ -193,6 +241,7 @@ export default function Contact() {
                     </label>
                     <Input
                       id="company"
+                      name="company"
                       placeholder="Your company name"
                       className="bg-black/40 border-zinc-800 focus:border-amber-600/50 text-zinc-300"
                     />
@@ -206,7 +255,7 @@ export default function Contact() {
                     <label htmlFor="service" className="mb-2 block text-sm font-medium text-zinc-300">
                       Service of Interest
                     </label>
-                    <Select>
+                    <Select name="service">
                       <SelectTrigger className="bg-black/40 border-zinc-800 focus:border-amber-600/50 text-zinc-300">
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
@@ -232,6 +281,7 @@ export default function Contact() {
                     </label>
                     <Textarea
                       id="message"
+                      name="message"
                       placeholder="Tell me about your project and safety needs..."
                       rows={5}
                       required

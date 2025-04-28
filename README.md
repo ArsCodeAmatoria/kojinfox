@@ -93,3 +93,32 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Built with Next.js App Router and React Server Components
 - Designed with a focus on professional safety and construction industry standards
 - Optimized for performance and accessibility
+
+## Mailchimp Integration Setup
+
+To set up the Mailchimp integration for the contact form, follow these steps:
+
+1. Sign up for a Mailchimp account if you don't have one already
+2. Get your API key:
+   - Go to Account > Extras > API keys
+   - Create a new API key or use an existing one
+3. Find your server prefix:
+   - It's the part after the dash in your Mailchimp URL (e.g., for `us10.admin.mailchimp.com`, the server prefix is `us10`)
+4. Create an audience/list and get the list ID:
+   - Go to Audience > Settings > Audience name and defaults
+   - The Audience ID is shown near the name of your audience
+5. Create a `.env.local` file in the root of your project with the following:
+   ```
+   MAILCHIMP_API_KEY=your-mailchimp-api-key
+   MAILCHIMP_SERVER_PREFIX=usX
+   MAILCHIMP_LIST_ID=your-list-id
+   ```
+6. Make sure to create merge fields in your Mailchimp audience that match the form fields:
+   - FNAME (for name)
+   - COMPANY
+   - SERVICE
+   - MESSAGE
+
+7. Restart your development server after making these changes.
+
+Note: Never commit your API keys to version control.
