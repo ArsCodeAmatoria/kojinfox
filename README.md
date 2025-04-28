@@ -94,31 +94,21 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Designed with a focus on professional safety and construction industry standards
 - Optimized for performance and accessibility
 
-## Mailchimp Integration Setup
+## Email Integration Setup
 
-To set up the Mailchimp integration for the contact form, follow these steps:
+To set up the email functionality for the contact form, follow these steps:
 
-1. Sign up for a Mailchimp account if you don't have one already
-2. Get your API key:
-   - Go to Account > Extras > API keys
-   - Create a new API key or use an existing one
-3. Find your server prefix:
-   - It's the part after the dash in your Mailchimp URL (e.g., for `us10.admin.mailchimp.com`, the server prefix is `us10`)
-4. Create an audience/list and get the list ID:
-   - Go to Audience > Settings > Audience name and defaults
-   - The Audience ID is shown near the name of your audience
-5. Create a `.env.local` file in the root of your project with the following:
+1. Create a Gmail account or use an existing one
+2. Set up an App Password for your Gmail account:
+   - Go to your Google Account → Security
+   - Enable 2-Step Verification if it's not already enabled
+   - Go to "App passwords" 
+   - Select "Mail" and "Other" (name it "Kojin Fox Website")
+   - Copy the 16-character password 
+3. Create a `.env.local` file in the root of your project with the following:
    ```
-   MAILCHIMP_API_KEY=your-mailchimp-api-key
-   MAILCHIMP_SERVER_PREFIX=usX
-   MAILCHIMP_LIST_ID=your-list-id
+   EMAIL_PASSWORD=your-gmail-app-password
    ```
-6. Make sure to create merge fields in your Mailchimp audience that match the form fields:
-   - FNAME (for name)
-   - COMPANY
-   - SERVICE
-   - MESSAGE
+4. If deploying to Vercel, add the environment variable in your project settings
 
-7. Restart your development server after making these changes.
-
-Note: Never commit your API keys to version control.
+Note: Never commit your email password to version control.
