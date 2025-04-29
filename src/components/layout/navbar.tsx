@@ -95,12 +95,12 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-md z-40">
           <div className="container mx-auto px-4 py-6">
-            <nav className="flex flex-col space-y-4">
+            <nav className="flex flex-col space-y-4 bg-zinc-900/95 p-4 rounded-xl">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="flex items-center px-4 py-3 text-zinc-100 hover:text-amber-500 hover:bg-zinc-800/80 rounded-md transition-colors bg-zinc-900/80"
+                  className="flex items-center px-4 py-3 text-zinc-100 hover:text-amber-500 hover:bg-zinc-800/80 rounded-md transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.icon}
