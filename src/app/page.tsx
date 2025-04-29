@@ -194,7 +194,7 @@ export default function Home() {
                   preload="auto"
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
-                  onTouchStart={(e) => {
+                  onClick={(e) => {
                     e.preventDefault();
                     if (videoRef.current) {
                       if (videoRef.current.paused) {
@@ -204,7 +204,7 @@ export default function Home() {
                       }
                     }
                   }}
-                  onClick={(e) => {
+                  onTouchEnd={(e) => {
                     e.preventDefault();
                     if (videoRef.current) {
                       if (videoRef.current.paused) {
@@ -222,13 +222,13 @@ export default function Home() {
                 {!isPlaying && (
                   <div 
                     className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
-                    onTouchStart={(e) => {
+                    onClick={(e) => {
                       e.preventDefault();
                       if (videoRef.current) {
                         videoRef.current.play();
                       }
                     }}
-                    onClick={(e) => {
+                    onTouchEnd={(e) => {
                       e.preventDefault();
                       if (videoRef.current) {
                         videoRef.current.play();
