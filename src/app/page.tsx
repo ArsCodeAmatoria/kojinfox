@@ -179,34 +179,22 @@ export default function Home() {
             {/* Right Certification & Stats Column */}
             <div className="flex flex-col lg:col-span-6 relative py-16">
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="relative w-full h-[300px] lg:h-[500px] rounded-xl overflow-hidden border border-amber-600/20 shadow-xl shadow-amber-600/5"
+                transition={{ duration: 0.5 }}
+                className="relative aspect-video w-full overflow-hidden rounded-xl bg-zinc-900"
               >
-                <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/30 to-black/60"></div>
                 <video
                   ref={videoRef}
-                  className="w-full h-full object-cover"
-                  poster="/hero-image.png"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  playsInline
                   controls
-                  preload="auto"
-                  onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
+                  poster="/video-poster.jpg"
                 >
                   <source src="/preventing-the-unthinkable.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                {/* Play button overlay - only shown when video is not playing */}
-                {!isPlaying && (
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-                    <div className="w-20 h-20 rounded-full bg-amber-600/80 flex items-center justify-center shadow-lg transform transition-transform hover:scale-110">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/50 backdrop-blur-sm p-3 rounded-lg">
                   <h3 className="text-amber-500 font-medium text-sm">Preventing the Unthinkable</h3>
                   <p className="text-zinc-300 text-xs">Construction Safety & Black Swan Events</p>

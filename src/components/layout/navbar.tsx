@@ -93,14 +93,14 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 bg-black/90 backdrop-blur-md z-40">
+        <div className="md:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-md z-40">
           <div className="container mx-auto px-4 py-6">
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="flex items-center px-4 py-3 text-zinc-300 hover:text-amber-500 hover:bg-zinc-800/50 rounded-md transition-colors"
+                  className="flex items-center px-4 py-3 text-zinc-100 hover:text-amber-500 hover:bg-zinc-800/80 rounded-md transition-colors bg-zinc-900/80"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.icon}
