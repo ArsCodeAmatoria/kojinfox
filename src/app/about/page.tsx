@@ -1,6 +1,6 @@
 'use client';
 
-import { Medal, Award, GraduationCap, Calendar, CheckCircle, Link2, Globe, Database, Lock, Award as AwardIcon, Code, FileCode, Shield, Network, Cpu, Terminal } from "lucide-react";
+import { Medal, Award, GraduationCap, Calendar, CheckCircle, Link2, Globe, Database, Lock, Award as AwardIcon, Code, FileCode, Shield, Network, Cpu, Terminal, FileCheck, ShieldCheck } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -280,6 +280,103 @@ export default function About() {
                         <li key={i} className="flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 text-emerald-500 flex-shrink-0" />
                           <span className="text-sm text-zinc-400">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </ScaleFadeIn>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* Courses Section */}
+      <section className="py-20 bg-zinc-900/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <FadeIn className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-1 mb-4 rounded-full bg-amber-600/10 border border-amber-600/20">
+              <span className="text-xs font-medium text-amber-600">EDUCATION</span>
+            </div>
+            <h2 className="text-4xl font-bold">Courses I've <span className="text-amber-600">Created</span></h2>
+          </FadeIn>
+          
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Tower Crane Erection Documentation Course",
+                description: "Comprehensive training on tower crane erection procedures, documentation requirements, and safety protocols.",
+                details: [
+                  "Erection sequence documentation",
+                  "Safety inspection procedures",
+                  "Load chart interpretation",
+                  "Assembly/disassembly planning",
+                  "Regulatory compliance requirements"
+                ],
+                icon: <FileCheck className="h-6 w-6 text-amber-600" />
+              },
+              {
+                title: "Fall Protection Training",
+                description: "Comprehensive training on fall prevention, proper harness use, and safety procedures for working at heights.",
+                details: [
+                  "Fall protection system assessment",
+                  "Proper harness fitting and inspection",
+                  "Anchor point selection and verification",
+                  "Rescue procedures training",
+                  "CORE of Fall Protection certification"
+                ],
+                icon: <ShieldCheck className="h-6 w-6 text-amber-600" />
+              },
+              {
+                title: "WHMIS Training",
+                description: "Workplace Hazardous Materials Information System training for proper handling of hazardous materials.",
+                details: [
+                  "Hazard identification and classification",
+                  "Safety Data Sheet (SDS) interpretation",
+                  "Proper labeling requirements",
+                  "Hazardous material storage protocols",
+                  "Emergency response procedures"
+                ],
+                icon: <Shield className="h-6 w-6 text-amber-600" />
+              },
+              {
+                title: "Lockout/Tagout Training",
+                description: "Comprehensive training on energy control procedures to prevent accidental equipment startup.",
+                details: [
+                  "Hazardous energy source identification",
+                  "Proper lockout device application",
+                  "Equipment-specific procedures",
+                  "Group lockout coordination",
+                  "Verification and testing protocols"
+                ],
+                icon: <Lock className="h-6 w-6 text-amber-600" />
+              },
+              {
+                title: "New and Young Workers Training",
+                description: "Specialized safety training program designed for new and young workers entering the construction industry.",
+                details: [
+                  "Workplace rights and responsibilities",
+                  "Hazard recognition and assessment",
+                  "Personal protective equipment (PPE)",
+                  "Emergency procedures",
+                  "Workplace violence prevention"
+                ],
+                icon: <GraduationCap className="h-6 w-6 text-amber-600" />
+              }
+            ].map((course, index) => (
+              <ScaleFadeIn key={index} className="flex flex-col">
+                <Card className="bg-zinc-800/50 border-zinc-700/50 h-full">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      {course.icon}
+                      <h3 className="text-xl font-semibold text-zinc-200">{course.title}</h3>
+                    </div>
+                    <p className="text-zinc-400 mb-4">{course.description}</p>
+                    <ul className="space-y-2">
+                      {course.details.map((detail, i) => (
+                        <li key={i} className="flex items-center gap-2 text-sm text-zinc-400">
+                          <CheckCircle className="h-4 w-4 text-amber-600" />
+                          {detail}
                         </li>
                       ))}
                     </ul>

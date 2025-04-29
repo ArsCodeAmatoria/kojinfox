@@ -18,18 +18,6 @@ interface ServiceType {
 
 const services: ServiceType[] = [
   {
-    title: "Fall Protection Training",
-    description: "Comprehensive training on fall prevention, proper harness use, and safety procedures for working at heights.",
-    details: [
-      "Fall protection system assessment",
-      "Proper harness fitting and inspection",
-      "Anchor point selection and verification",
-      "Rescue procedures training",
-      "CORE of Fall Protection certification"
-    ],
-    icon: <FileCheck className="h-5 w-5" />,
-  },
-  {
     title: "Crane & Hoist Training",
     description: "Expert training for overhead crane operation, hoist safety, and vertical transport systems.",
     details: [
@@ -55,18 +43,6 @@ const services: ServiceType[] = [
     highlight: true,
   },
   {
-    title: "WHMIS Training",
-    description: "Workplace Hazardous Materials Information System training for proper handling of hazardous materials.",
-    details: [
-      "Hazard identification and classification",
-      "Safety Data Sheet (SDS) interpretation",
-      "Proper labeling requirements",
-      "Hazardous material storage protocols",
-      "Emergency response procedures"
-    ],
-    icon: <ShieldCheck className="h-5 w-5" />,
-  },
-  {
     title: "Equipment Operation Training",
     description: "Certified training for various construction equipment including forklifts and telehandlers.",
     details: [
@@ -77,18 +53,6 @@ const services: ServiceType[] = [
       "Back-Hoe Loader certification"
     ],
     icon: <BookOpen className="h-5 w-5" />,
-  },
-  {
-    title: "Lockout/Tagout Training",
-    description: "Comprehensive training on energy control procedures to prevent accidental equipment startup.",
-    details: [
-      "Hazardous energy source identification",
-      "Proper lockout device application",
-      "Equipment-specific procedures",
-      "Group lockout coordination",
-      "Verification and testing protocols"
-    ],
-    icon: <Hammer className="h-5 w-5" />,
   },
   {
     title: "AI-Powered Risk Assessment",
@@ -102,7 +66,7 @@ const services: ServiceType[] = [
     ],
     icon: <Cpu className="h-5 w-5" />,
     highlight: true,
-  },
+  }
 ];
 
 export default function Services() {
