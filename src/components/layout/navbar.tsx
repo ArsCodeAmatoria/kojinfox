@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Home, Info, Wrench, AlertTriangle, Phone } from "lucide-react";
+import { Home, Info, Wrench, AlertTriangle, Phone, Menu, X } from "lucide-react";
 import { 
   NavigationMenu,
   NavigationMenuContent,
@@ -10,6 +12,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const navLinks = [
   { title: "About", href: "/about", icon: <Info className="mr-2 h-4 w-4" /> },
@@ -19,6 +22,8 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-800/20 bg-black/70 backdrop-blur-md supports-[backdrop-filter]:bg-black/40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex h-16 items-center">
@@ -75,8 +80,44 @@ export function Navbar() {
               Contact Me
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 text-zinc-300 hover:text-amber-500 transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 top-16 bg-black/90 backdrop-blur-md z-40">
+          <div className="container mx-auto px-4 py-6">
+            <nav className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="flex items-center px-4 py-3 text-zinc-300 hover:text-amber-500 hover:bg-zinc-800/50 rounded-md transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.icon}
+                  {link.title}
+                </Link>
+              ))}
+              <Link
+                href="/contact"
+                className="flex items-center justify-center px-4 py-3 bg-amber-600 text-black font-semibold rounded-md hover:bg-amber-500 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Me
+              </Link>
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   );
 } 

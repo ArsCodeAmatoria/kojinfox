@@ -177,12 +177,12 @@ export default function Home() {
             </div>
             
             {/* Right Certification & Stats Column */}
-            <div className="hidden lg:flex flex-col lg:col-span-6 relative py-16">
+            <div className="flex flex-col lg:col-span-6 relative py-16">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="relative w-full h-[500px] rounded-xl overflow-hidden border border-amber-600/20 shadow-xl shadow-amber-600/5"
+                className="relative w-full h-[300px] lg:h-[500px] rounded-xl overflow-hidden border border-amber-600/20 shadow-xl shadow-amber-600/5"
               >
                 <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/30 to-black/60"></div>
                 <video
@@ -198,7 +198,7 @@ export default function Home() {
                   crossOrigin="anonymous"
                   controlsList="nodownload"
                 >
-                  <source src="/Preventing%20the%20Unthinkable_%20Construction%20Safety%2C%20Black%20Swan%20Even.mp4" type="video/mp4" />
+                  <source src="/preventing-the-unthinkable.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 {/* Play button overlay - only shown when video is not playing */}
