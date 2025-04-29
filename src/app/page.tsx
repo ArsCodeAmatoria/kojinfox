@@ -189,14 +189,10 @@ export default function Home() {
                   ref={videoRef}
                   className="w-full h-full object-cover"
                   poster="/hero-image.png"
-                  autoPlay
-                  loop
-                  playsInline
                   controls
+                  preload="auto"
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
-                  crossOrigin="anonymous"
-                  controlsList="nodownload"
                 >
                   <source src="/preventing-the-unthinkable.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
