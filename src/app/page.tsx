@@ -194,6 +194,13 @@ export default function Home() {
                   preload="auto"
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
+                >
+                  <source src="/preventing-the-unthinkable.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                {/* Touch overlay for mobile controls */}
+                <div 
+                  className="absolute inset-0 z-10 md:hidden"
                   onTouchStart={(e) => {
                     e.preventDefault();
                     if (videoRef.current) {
@@ -204,31 +211,18 @@ export default function Home() {
                       }
                     }
                   }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (videoRef.current) {
-                      if (videoRef.current.paused) {
-                        videoRef.current.play();
-                      } else {
-                        videoRef.current.pause();
-                      }
-                    }
-                  }}
-                >
-                  <source src="/preventing-the-unthinkable.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                />
                 {/* Play button overlay - only shown when video is not playing */}
                 {!isPlaying && (
                   <div 
-                    className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
-                    onTouchStart={(e) => {
+                    className="absolute inset-0 flex items-center justify-center z-20 cursor-pointer"
+                    onClick={(e) => {
                       e.preventDefault();
                       if (videoRef.current) {
                         videoRef.current.play();
                       }
                     }}
-                    onClick={(e) => {
+                    onTouchStart={(e) => {
                       e.preventDefault();
                       if (videoRef.current) {
                         videoRef.current.play();
