@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Home, Info, Wrench, AlertTriangle, Phone, Menu, X } from "lucide-react";
+import { Home, Info, Wrench, AlertTriangle, Phone, Menu, X, Bot } from "lucide-react";
 import { 
   NavigationMenu,
   NavigationMenuContent,
@@ -18,6 +18,7 @@ const navLinks = [
   { title: "About", href: "/about", icon: <Info className="mr-2 h-4 w-4" /> },
   { title: "Services", href: "/services", icon: <Wrench className="mr-2 h-4 w-4" /> },
   { title: "Black Swan", href: "/black-swan", icon: <AlertTriangle className="mr-2 h-4 w-4" /> },
+  { title: "AI Demo", href: "/ai-demo", icon: <Bot className="mr-2 h-4 w-4" /> },
   { title: "Contact", href: "/contact", icon: <Phone className="mr-2 h-4 w-4" /> },
 ];
 

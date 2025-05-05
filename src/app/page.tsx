@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { ArrowRight, FileCheck, Shield, AlertTriangle, ShieldCheck, BookOpen } from "lucide-react";
+import { ArrowRight, FileCheck, Shield, AlertTriangle, ShieldCheck, BookOpen, CheckCircle, Bot } from "lucide-react";
 import { ServiceCard } from "@/components/ui/service-card";
 import { StatsChart } from "@/components/ui/stats-chart";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
@@ -54,6 +54,18 @@ const testimonials = [
     imageSrc: "/testimonials/james-carpenter.jpg",
   },
 ];
+
+// Add AI Demo section after skills section
+const aiDemoSection = {
+  title: "AI-Powered FLHA Creator",
+  description: "Experience our cutting-edge AI assistant that helps create comprehensive Field Level Hazard Assessments. Simply describe your work activities, and our AI will guide you through identifying potential hazards and control measures.",
+  features: [
+    "Interactive AI conversation",
+    "Dynamic hazard assessment",
+    "Real-time control measure suggestions",
+    "Export to PDF functionality"
+  ]
+};
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -339,6 +351,78 @@ export default function Home() {
               </Button>
             </MotionButton>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Add AI Demo section after skills section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <FadeIn className="flex flex-col items-center mb-16">
+            <div className="inline-flex items-center px-4 py-1 mb-4 rounded-full bg-amber-600/10 border border-amber-600/20">
+              <span className="text-xs font-medium text-amber-600">AI INNOVATION</span>
+            </div>
+            <h2 className="text-4xl font-bold tracking-tight md:text-5xl text-center">
+              AI-Powered <span className="text-amber-600">Safety</span>
+            </h2>
+            <p className="mt-4 text-zinc-400 max-w-2xl text-center">
+              Experience the future of safety assessment with our AI-powered FLHA creator
+            </p>
+          </FadeIn>
+
+          <div className="max-w-5xl mx-auto">
+            <FadeIn>
+              <div className="bg-zinc-900/50 rounded-2xl p-8 border border-amber-600/20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4">
+                      <span className="text-amber-600">FLHA</span> Creator
+                    </h3>
+                    <p className="text-zinc-400 mb-6">
+                      {aiDemoSection.description}
+                    </p>
+                    <ul className="space-y-3 mb-8">
+                      {aiDemoSection.features.map((feature, index) => (
+                        <li key={index} className="flex items-center text-zinc-300">
+                          <CheckCircle className="h-5 w-5 text-amber-600 mr-2" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <MotionButton>
+                      <Button asChild className="bg-amber-600 hover:bg-amber-700 text-black">
+                        <Link href="/ai-demo" className="inline-flex items-center">
+                          Try AI FLHA Demo
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </MotionButton>
+                  </div>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 to-transparent rounded-xl"></div>
+                    <div className="relative bg-zinc-800/50 rounded-xl p-6 border border-amber-600/20">
+                      <div className="space-y-4">
+                        <div className="flex items-center space-x-2 mb-4">
+                          <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center">
+                            <Bot className="h-4 w-4 text-black" />
+                          </div>
+                          <span className="text-zinc-300 font-medium">AI Assistant</span>
+                        </div>
+                        <div className="bg-zinc-900/50 rounded-lg p-4 text-zinc-400 text-sm">
+                          "I'll help you create a comprehensive FLHA. What work activities will you be performing today?"
+                        </div>
+                        <div className="bg-amber-600/10 rounded-lg p-4 text-zinc-300 text-sm border border-amber-600/20">
+                          "We'll be working on the 15th floor, installing new HVAC units."
+                        </div>
+                        <div className="bg-zinc-900/50 rounded-lg p-4 text-zinc-400 text-sm">
+                          "I'll help you identify potential hazards and control measures for this work. Let's start with the basics..."
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
