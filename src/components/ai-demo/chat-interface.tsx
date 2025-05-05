@@ -8,7 +8,12 @@ interface Message {
 }
 
 export function ChatInterface() {
-  const [messages, setMessages] = useState<Message[]>([])
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      content: "Hello! I'm your FLHA assistant. I'll help you create a comprehensive Field Level Hazard Assessment. Let's start with some basic information about your work.\n\nWhat type of work will you be performing today?",
+      type: 'ai'
+    }
+  ])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
@@ -58,14 +63,6 @@ export function ChatInterface() {
   return (
     <div className="flex flex-col h-full">
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {messages.length === 0 && (
-          <div className="flex items-center justify-center h-full">
-            <div className="text-center text-zinc-500">
-              <p className="mb-2">Start a conversation with the AI assistant</p>
-              <p className="text-sm">Describe your work activities to begin creating your FLHA</p>
-            </div>
-          </div>
-        )}
         {messages.map((message, index) => (
           <div
             key={index}
